@@ -4,10 +4,10 @@
 
 
 
-## Path to this repository
+## Path to this repository and setup docker
 
 PWD          = $(shell pwd)
-PANDOC       = pandoc
+PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
 
 
 
@@ -70,6 +70,11 @@ $(TMP): __%.filled.tex: %.tex $(META)
 
 
 
+docker:
+	cd docker && make
+
+
+
 clean:
 	rm -f $(TMP)
 
@@ -77,4 +82,4 @@ distclean: clean
 	rm -f $(TARGET)
 
 
-.PHONY: all simple clean distclean
+.PHONY: all simple docker clean distclean
