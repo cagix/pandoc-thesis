@@ -37,6 +37,13 @@ toc: true
 toc-depth: 2
 
 
+## Eisvogel (do not change!)
+## https://github.com/Wandmalfarbe/pandoc-latex-template
+book: true
+titlepage: true
+toc-own-page: true
+
+
 ## mandatory
 bibliography: references.bib
 link-citations: true

@@ -49,3 +49,25 @@ $endif$
 \end{tabular}
 }
 %------------------------------------- Custom Title Page ---------------------------
+
+
+
+%------------------------------------- Custom Title (Back) Page --------------------
+$if(eisvogel)$
+\usepackage{xpatch}
+
+\newcommand\customtitlebackpage{
+\thispagestyle{empty}
+\hfill
+\vfill
+\textbf{$author$} ($studentnumber$) \\
+\textit{$title$} \\
+$date$ \\[12pt]
+Erstprüfer/in: $reviewer1$ \\
+Zweitprüfer/in: $reviewer2$
+}
+
+\xpretocmd{\frontmatter}{\customtitlebackpage}{}{}
+\xapptocmd{\frontmatter}{\setcounter{page}{3}}{}{}
+$endif$
+%------------------------------------- Custom Title (Back) Page --------------------

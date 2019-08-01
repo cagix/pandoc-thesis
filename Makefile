@@ -44,6 +44,8 @@ TMP          = $(TMP1) $(TMP2) $(TMP3)
 
 ## Pandoc options
 
+EISVOGEL    =
+
 OPTIONS      = -f markdown
 OPTIONS     += --pdf-engine=pdflatex
 OPTIONS     += --filter=pandoc-citeproc
@@ -52,6 +54,7 @@ OPTIONS     += --metadata-file=$(META)
 OPTIONS     += --include-in-header=$(TMP1)
 OPTIONS     += --include-before-body=$(TMP2)
 OPTIONS     += --include-after-body=$(TMP3)
+OPTIONS     += $(EISVOGEL)
 
 
 
@@ -60,13 +63,18 @@ OPTIONS     += --include-after-body=$(TMP3)
 ## Simple book layout
 simple: $(TARGET)
 
+## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
+eisvogel: EISVOGEL += -M eisvogel=true
+eisvogel: OPTIONS  += --template=eisvogel.tex
+eisvogel: $(TARGET)
+
 
 
 ${TARGET}: $(SRC) $(REFERENCES) $(APPENDIX) $(META) $(BIBFILE) $(TMP)
 	$(PANDOC) ${OPTIONS} -o $@ $(SRC) $(REFERENCES) $(APPENDIX)
 
 $(TMP): __%.filled.tex: %.tex $(META)
-	$(PANDOC) --template=$< --metadata-file=$(META) -o $@ $<
+	$(PANDOC) $(EISVOGEL) --template=$< --metadata-file=$(META) -o $@ $<
 
 
 
@@ -82,4 +90,4 @@ distclean: clean
 	rm -f $(TARGET)
 
 
-.PHONY: all simple docker clean distclean
+.PHONY: all simple eisvogel docker clean distclean
