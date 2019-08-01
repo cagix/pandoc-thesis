@@ -1,0 +1,51 @@
+
+%------------------------------------- Custom Title Page ---------------------------
+\renewcommand{\maketitle}{
+\thispagestyle{empty}
+
+\parindent=0pt
+\begin{center}
+    \Large
+    \textsc{
+        Fachhochschule Bielefeld\\
+        Fachbereich Campus Minden\\
+        \vspace{\baselineskip}\noindent
+        Studiengang Informatik
+    }
+\end{center}
+
+\vspace{20mm}
+\hrule
+\vspace{5mm}
+
+\begin{center}
+    \LARGE
+    \textbf{\textsc{ $title$ }}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\vspace{10mm}
+
+$if(subtitle)$
+\begin{center}
+    \Large
+    \textsc{ $subtitle$ }
+\end{center}
+$endif$
+
+\vfill
+
+\vspace{\baselineskip}\noindent
+\large
+\begin{tabular}{lp{\textwidth}}
+    vorgelegt von: & \texttt{$for(author)$$author$$sep$ \and $endfor$}\\
+    Matrikelnummer: & \texttt{$studentnumber$} \\
+    &\\[12pt]
+    Abgabe am: & \texttt{$date$}\\
+    &\\[24pt]
+    Erstprüfer/in: & \texttt{$reviewer1$}\\
+    Zweitprüfer/in: & \texttt{$reviewer2$}
+\end{tabular}
+}
+%------------------------------------- Custom Title Page ---------------------------

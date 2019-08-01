@@ -240,3 +240,11 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+# generated titlepage, frontmatter and backmatter
+__titlepage.filled.tex
+__frontmatter.filled.tex
+__backmatter.filled.tex
+
+.DS_Store
+

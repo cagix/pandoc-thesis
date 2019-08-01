@@ -1,0 +1,85 @@
+---
+## mandatory (subtitle is optional)
+title: "Title of my Thesis"
+#subtitle: "From Markdown to LaTeX to PDF"
+author: "Surname Name"
+keywords: [Markdown, Example]
+
+studentnumber: "12345678"
+date: "20. Juli 2019"
+
+reviewer1:  "XXX, FH Bielefeld"
+reviewer2:  "XXX, Wuppie GmbH"
+
+
+## misc. settings
+lang: de-DE
+
+documentclass: scrbook
+classoption:
+- open=right
+- twoside=true
+- cleardoublepage=empty
+- clearpage=empty
+papersize: a4
+fontsize: 11pt
+geometry:
+- top=30mm
+- left=25mm
+- bottom=30mm
+- width=150mm
+- bindingoffset=6mm
+
+colorlinks: true
+numbersections: true
+
+toc: true
+toc-depth: 2
+
+
+## mandatory
+bibliography: references.bib
+link-citations: true
+## download from https://www.zotero.org/styles
+## cf. https://pandoc.org/MANUAL.html#citations
+#csl: "chicago-author-date-de.csl"
+#csl: "chicago-note-bibliography.csl"
+#csl: "ieee.csl"
+#csl: "oxford-university-press-note.csl"
+
+
+## optional (mandatory, if english abstract enabled)
+abstract-de: |
+  Dies ist die Zusammenfassung auf Deutsch.
+
+
+## optional
+abstract-en: |
+  This is an english abstract.
+
+
+## optional
+acknowledgements: |
+  Hier kommt die Danksagung hin.
+
+
+## optional
+restrictionnote: |
+  Die vorliegende Arbeit enthält vertrauliche Daten der Firma XYZ. Veröffentlichungen
+  oder Vervielfältigungen der Arbeit -- auch nur auszugsweise -- sind ohne ausdrückliche
+  Genehmigung des beteiligten Unternehmens nicht gestattet.
+
+  Die Arbeit ist nur den Prüfern bzw. den Korrektoren sowie den Mitgliedern des
+  Prüfungsausschusses bzw. der oder dem Prüfungsbeauftragten zugänglich zu machen.
+
+
+## mandatory
+declaration: |
+  Ich erkläre hiermit an Eides Statt, dass ich die vorliegende Arbeit selbstständig
+  angefertigt habe. Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken
+  sind als entsprechend kenntlich gemacht.
+
+  Ich habe die Arbeit bisher weder in gleicher noch in ähnlicher Form einer anderen
+  Prüfungsbehörde vorgelegt und auch noch nicht veröffentlicht. Das PDF-Exemplar stimmt
+  mit den eingereichten Exemplaren überein.
+---
