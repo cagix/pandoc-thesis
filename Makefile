@@ -45,6 +45,7 @@ TMP          = $(TMP1) $(TMP2) $(TMP3)
 ## Pandoc options
 
 EISVOGEL    =
+CLEANTHESIS =
 
 OPTIONS      = -f markdown
 OPTIONS     += --pdf-engine=pdflatex
@@ -55,6 +56,7 @@ OPTIONS     += --include-in-header=$(TMP1)
 OPTIONS     += --include-before-body=$(TMP2)
 OPTIONS     += --include-after-body=$(TMP3)
 OPTIONS     += $(EISVOGEL)
+OPTIONS     += $(CLEANTHESIS)
 
 
 
@@ -68,13 +70,18 @@ eisvogel: EISVOGEL += -M eisvogel=true
 eisvogel: OPTIONS  += --template=eisvogel.tex
 eisvogel: $(TARGET)
 
+## Use Clean Thesis template (https://github.com/derric/cleanthesis)
+cleanthesis: CLEANTHESIS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
+cleanthesis: OPTIONS     += --include-in-header=include-header.tex
+cleanthesis: $(TARGET)
+
 
 
 ${TARGET}: $(SRC) $(REFERENCES) $(APPENDIX) $(META) $(BIBFILE) $(TMP)
 	$(PANDOC) ${OPTIONS} -o $@ $(SRC) $(REFERENCES) $(APPENDIX)
 
 $(TMP): __%.filled.tex: %.tex $(META)
-	$(PANDOC) $(EISVOGEL) --template=$< --metadata-file=$(META) -o $@ $<
+	$(PANDOC) $(EISVOGEL) $(CLEANTHESIS) --template=$< --metadata-file=$(META) -o $@ $<
 
 
 
@@ -90,4 +97,4 @@ distclean: clean
 	rm -f $(TARGET)
 
 
-.PHONY: all simple eisvogel docker clean distclean
+.PHONY: all simple eisvogel cleanthesis docker clean distclean
