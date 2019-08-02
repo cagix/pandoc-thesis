@@ -44,8 +44,8 @@ titlepage: true
 toc-own-page: true
 
 
-## mandatory
-bibliography: references.bib
+## optional (bibliography already set up in Makefile)
+#bibliography: references.bib
 link-citations: true
 ## download from https://www.zotero.org/styles
 ## cf. https://pandoc.org/MANUAL.html#citations
