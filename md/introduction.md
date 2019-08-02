@@ -68,6 +68,24 @@ Inline-Math geht mit einem einfachen Dollar-Zeichen: $\mathbf{w} \gets \mathbf{w
 : Tabelle als Markdown-Pipe-Table \label{tab:ugh}
 
 
+Leider gibt es derzeit einen Bug (siehe [github.com/Wandmalfarbe/pandoc-latex-template/issues/29](https://github.com/Wandmalfarbe/pandoc-latex-template/issues/29)
+bzw. [github.com/jgm/pandoc/issues/3929](https://github.com/jgm/pandoc/issues/3929)), wodurch die Breite beim Einfärben der
+Tabellenzeilen etwas zu breit wird. Wenn das stört, kann man immer noch normale \LaTeX{}-Tabellen nutzen (siehe
+Tabelle \ref{tab:ieks}).
+
+\begin{longtable}[]{rllc}
+\caption{Tabelle als \LaTeX{}-Table \label{tab:ieks}} \\
+\toprule
+Rechtsbündig & Linksbündig & Default & Zentriert \tabularnewline
+\midrule
+\endhead
+foo & foo & foo & foo \tabularnewline
+123 & 123 & 123 & 123 \tabularnewline
+bar & bar & bar & bar \tabularnewline
+\bottomrule
+\end{longtable}
+
+
 ## Querverweise
 
 Querverweise funktionieren in Markdown leider nicht so richtig wie von \LaTeX{} gewohnt.
