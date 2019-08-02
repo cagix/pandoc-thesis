@@ -34,7 +34,7 @@ die passenden CSL-Dateien zum Download zu finden. Die Aktivierung erfolgt über 
 
 ## Abbildungen
 
-![Hier steht die Bildüberschrift \label{fig:foo}](figs/wuppie.png){width=80%}
+![Hier steht die Bildunterschrift \label{fig:foo}](figs/wuppie.png){width=80%}
 
 
 ## Source-Code
