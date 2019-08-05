@@ -1,8 +1,3 @@
-# Author: Carsten Gips <carsten.gips@fh-bielefeld.de>
-# Copyright: (c) 2019 Carsten Gips
-# License: MIT
-
-
 
 ## Path to this repository and setup docker
 
