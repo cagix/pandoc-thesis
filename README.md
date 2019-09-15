@@ -29,7 +29,7 @@ A Template for Thesis Documents written in Markdown
     project folder
 
 
-## Usage
+## Usage Example
 
 1.  Maintain your references in [`references.bib`](references.bib)
 2.  Put the title of your thesis, your name and other meta information in [`md/metadata.yaml`](md/metadata.yaml)
@@ -41,12 +41,36 @@ A Template for Thesis Documents written in Markdown
         of each file.
     *   In case you see need for an other layout, please do not forget to reflect the changed filenames in [`Makefile`](Makefile).
 4.  Build the thesis:
-    *   using the simple layout: `make simple`
-    *   using Eisvogel: `make eisvogel`
-    *   using Clean Thesis: `make cleanthesis`
+    *   Using the simple layout: `make simple`
+    *   Using Eisvogel: `make eisvogel`
+    *   Using Clean Thesis: `make cleanthesis`
 5.  Clean up:
-    *   to remove temporary (generated) filed: `make clean`
-    *   to also remove the generated thesis (PDF): `make distclean`
+    *   To remove temporary (generated) filed: `make clean`
+    *   To also remove the generated thesis (PDF): `make distclean`
+
+The above mentioned files constitute a minimal working example. You can start your own project by just customizing those files.
+
+
+## Preview
+
+### Example using *Simple* Layout
+
+| Simple Titlepage                                                                                        | Simple Chapter                                                                                      |
+|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| [![Simple Titlepage](examples/thesis_example_simple_titlepage.png)](examples/thesis_example_simple.pdf) | [![Simple Chapter](examples/thesis_example_simple_chapter.png)](examples/thesis_example_simple.pdf) |
+
+### Example using *Eisvogel* Template
+
+| Eisvogel Titlepage                                                                                            | Eisvogel Chapter                                                                                          |
+|---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| [![Eisvogel Titlepage](examples/thesis_example_eisvogel_titlepage.png)](examples/thesis_example_eisvogel.pdf) | [![Eisvogel Chapter](examples/thesis_example_eisvogel_chapter.png)](examples/thesis_example_eisvogel.pdf) |
+
+### Example using *Clean Thesis* Template
+
+| Clean Thesis Titlepage                                                                                                  | Clean Thesis Chapter                                                                                                |
+|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| [![Clean Thesis Titlepage](examples/thesis_example_cleanthesis_titlepage.png)](examples/thesis_example_cleanthesis.pdf) | [![Clean Thesis Chapter](examples/thesis_example_cleanthesis_chapter.png)](examples/thesis_example_cleanthesis.pdf) |
+
 
 
 ---
