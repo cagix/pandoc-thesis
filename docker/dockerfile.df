@@ -17,5 +17,10 @@ RUN wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-am
         rm pandoc* &&                                                                           \
         apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Avoid running in container
+RUN mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 ecrm0900 && \
+    mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 ecrm1728 && \
+    mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 ecrm1095
+
 # Working directory
 WORKDIR /pandoc
