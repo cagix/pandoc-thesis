@@ -32,9 +32,11 @@ debian              stable-slim         b861b2eb769f        11 days ago         
 *   Eisvogel: For using the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template), download the latest
     version of the template [`eisvogel.tex`](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/master/eisvogel.tex)
     and move it to the project folder
+    (**Note**: Latest tested commit is [`7eff8ff442`](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/7eff8ff442c7de094afa8debf4e39bd380d92cd8/eisvogel.tex).)
 *   Clean Thesis: For using the [Clean Thesis template](https://github.com/derric/cleanthesis), download the latest version
     of the template [`cleanthesis.sty`](https://github.com/derric/cleanthesis/blob/master/cleanthesis.sty) and move it to the
     project folder
+    (**Note**: Latest tested commit is [`c4609c4c70`](https://github.com/derric/cleanthesis/blob/c4609c4c70d718876c3cbf7aa46d80b26299612e/cleanthesis.sty).)
 
 
 ## Usage Example
