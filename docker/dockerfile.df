@@ -1,5 +1,10 @@
 FROM debian:stable-slim
 
+# On Linux: replace with your actual UID/GID (if not the default 1000)
+ARG USERNAME=pandocthesis
+ARG USER_UID=1000
+ARG USER_GID=1000
+
 # https://www.debian.org/distrib/packages
 RUN apt-get update && apt-get install -y --no-install-recommends            \
         apt-utils bash wget make graphviz biber                             \
@@ -9,6 +14,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends            \
         texlive-bibtex-extra texlive-lang-english texlive-lang-german       \
         texlive-font-utils texlive-fonts-recommended texlive-fonts-extra    \
         fontconfig lmodern ghostscript gsfonts cm-super                     \
+    # Create a non-root user to use -- see https://aka.ms/vscode-remote/containers/non-root-user.
+    && groupadd --gid $USER_GID $USERNAME \
+    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    # Clean-Up
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # https://github.com/jgm/pandoc/releases/latest
@@ -24,3 +33,6 @@ RUN mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 ecrm0900 && \
 
 # Working directory
 WORKDIR /pandoc
+
+# Set default (non-root) user
+USER $USERNAME
