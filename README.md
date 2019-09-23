@@ -23,8 +23,8 @@ debian              stable-slim         b861b2eb769f        11 days ago         
 1.  Install pandoc from <https://pandoc.org/>
 2.  You also need to install LaTeX, e.g. from <https://www.tug.org/texlive/>
 3.  Install packages needed by pandoc: <https://pandoc.org/MANUAL.html#creating-a-pdf>
-4.  Either set an environment variable `PANDOC` to the location of your pandoc installation or change in the line
-    `PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc` in the [`Makefile`](Makefile) to reflect
+4.  Either set an environment variable `PANDOC` pointing to the location of your pandoc installation or change in the
+    line `PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc` in the [`Makefile`](Makefile) to reflect
     your settings
 
 ### Additional Templates
