@@ -8,7 +8,15 @@ A Template for Thesis Documents written in Markdown
 ### Docker (recommended)
 
 1.  Install docker from <https://hub.docker.com/search/?type=edition&offering=community>
-2.  Build docker image containing pandoc and TeX Live: `make docker`
+2.  Build docker image containing all dependencies, e.g. pandoc and TeX Live: `make docker`
+
+**Note**: You will need about 2GB of free disk space:
+```
+$ docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+pandoc-thesis       latest              9b8e245781ab        3 days ago          1.98GB
+debian              stable-slim         b861b2eb769f        11 days ago         69.2MB
+```
 
 ### Alternative Route
 
