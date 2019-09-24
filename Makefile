@@ -6,15 +6,15 @@ PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
 
 ## Template variables
 
-TEMPLATES_DIR	= templates
+TEMPLATES_DIR  = templates
 
-EISVOGEL_DIR		= $(TEMPLATES_DIR)/eisvogel
-EISVOGEL_VERSION	= v1.2.4
-EISVOGEL_GIT_REPO	= https://github.com/Wandmalfarbe/pandoc-latex-template.git
+EISVOGEL_DIR        = $(TEMPLATES_DIR)/eisvogel
+EISVOGEL_VERSION    = v1.2.4
+EISVOGEL_GIT_REPO   = https://github.com/Wandmalfarbe/pandoc-latex-template.git
 
-CLEANTHESIS_DIR			= $(TEMPLATES_DIR)/cleanthesis
-CLEANTHESIS_VERSION		= v0.4.0
-CLEANTHESIS_GIT_REPO	= https://github.com/derric/cleanthesis.git
+CLEANTHESIS_DIR         = $(TEMPLATES_DIR)/cleanthesis
+CLEANTHESIS_VERSION     = v0.4.0
+CLEANTHESIS_GIT_REPO    = https://github.com/derric/cleanthesis.git
 
 
 ## Source files
@@ -70,22 +70,25 @@ OPTIONS     += $(CLEANTHESIS)
 ## Targets
 
 ## Simple book layout
+
 simple: $(TARGET)
+
+## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
 
 eisvogel-template-dl:
 	rm -rf $(EISVOGEL_DIR)
 	git clone --single-branch --branch $(EISVOGEL_VERSION) --depth 1 $(EISVOGEL_GIT_REPO) $(EISVOGEL_DIR)
 
-cleanthesis-template-dl:
-	rm -rf $(CLEANTHESIS_DIR)
-	git clone --single-branch --branch $(CLEANTHESIS_VERSION) --depth 1 $(CLEANTHESIS_GIT_REPO) $(CLEANTHESIS_DIR)
-
-## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
 eisvogel: EISVOGEL += -M eisvogel=true
 eisvogel: OPTIONS  += --template=$(EISVOGEL_DIR)/eisvogel.tex
 eisvogel: $(TARGET)
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
+
+cleanthesis-template-dl:
+	rm -rf $(CLEANTHESIS_DIR)
+	git clone --single-branch --branch $(CLEANTHESIS_VERSION) --depth 1 $(CLEANTHESIS_GIT_REPO) $(CLEANTHESIS_DIR)
+
 cleanthesis: CLEANTHESIS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
 cleanthesis: OPTIONS     += --include-in-header=include-header.tex
 cleanthesis: $(TARGET)
