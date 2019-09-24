@@ -248,6 +248,12 @@ __backmatter.filled.tex
 
 .DS_Store
 
-templates/*
-!templates/.gitkeep
+# Temporary files
+
+tmp/
+
+# Template files
+
+eisvogel.tex
+cleanthesis.sty
 

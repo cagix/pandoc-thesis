@@ -6,7 +6,8 @@ PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
 
 ## Template variables
 
-TEMPLATES_DIR  = templates
+TMP_DIR         = tmp
+TEMPLATES_DIR   = $(TMP_DIR)/templates
 
 EISVOGEL_DIR        = $(TEMPLATES_DIR)/eisvogel
 EISVOGEL_VERSION    = v1.2.4
@@ -78,9 +79,10 @@ simple: $(TARGET)
 eisvogel-template-dl:
 	rm -rf $(EISVOGEL_DIR)
 	git clone --single-branch --branch $(EISVOGEL_VERSION) --depth 1 $(EISVOGEL_GIT_REPO) $(EISVOGEL_DIR)
+	cp $(EISVOGEL_DIR)/eisvogel.tex eisvogel.tex
 
 eisvogel: EISVOGEL += -M eisvogel=true
-eisvogel: OPTIONS  += --template=$(EISVOGEL_DIR)/eisvogel.tex
+eisvogel: OPTIONS  += --template=eisvogel.tex
 eisvogel: $(TARGET)
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
@@ -88,6 +90,7 @@ eisvogel: $(TARGET)
 cleanthesis-template-dl:
 	rm -rf $(CLEANTHESIS_DIR)
 	git clone --single-branch --branch $(CLEANTHESIS_VERSION) --depth 1 $(CLEANTHESIS_GIT_REPO) $(CLEANTHESIS_DIR)
+	cp $(CLEANTHESIS_DIR)/cleanthesis.sty cleanthesis.sty
 
 cleanthesis: CLEANTHESIS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
 cleanthesis: OPTIONS     += --include-in-header=include-header.tex
@@ -109,7 +112,7 @@ docker:
 
 
 clean:
-	rm -rf $(TMP) $(TEMPLATES_DIR)/*
+	rm -rf $(TMP) $(TMP_DIR)
 
 distclean: clean
 	rm -f $(TARGET)
