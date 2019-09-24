@@ -106,7 +106,7 @@ docker:
 
 
 clean:
-	rm -f $(TMP)
+	rm -rf $(TMP) $(TEMPLATES_DIR)/*
 
 distclean: clean
 	rm -f $(TARGET)
