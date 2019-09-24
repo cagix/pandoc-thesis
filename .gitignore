@@ -248,3 +248,6 @@ __backmatter.filled.tex
 
 .DS_Store
 
+templates/*
+!templates/.gitkeep
+

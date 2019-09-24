@@ -4,6 +4,9 @@
 PWD          = $(shell pwd)
 PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
 
+## Template variables
+
+TEMPLATES_DIR	= templates
 
 
 ## Source files
