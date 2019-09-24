@@ -12,6 +12,10 @@ EISVOGEL_DIR		= $(TEMPLATES_DIR)/eisvogel
 EISVOGEL_VERSION	= v1.2.4
 EISVOGEL_GIT_REPO	= https://github.com/Wandmalfarbe/pandoc-latex-template.git
 
+CLEANTHESIS_DIR			= $(TEMPLATES_DIR)/cleanthesis
+CLEANTHESIS_VERSION		= v0.4.0
+CLEANTHESIS_GIT_REPO	= https://github.com/derric/cleanthesis.git
+
 
 ## Source files
 ## (Adjust to your needs. Order of markdown files in SRC matters!)
@@ -72,6 +76,10 @@ eisvogel-template-dl:
 	rm -rf $(EISVOGEL_DIR)
 	git clone --single-branch --branch $(EISVOGEL_VERSION) --depth 1 $(EISVOGEL_GIT_REPO) $(EISVOGEL_DIR)
 
+cleanthesis-template-dl:
+	rm -rf $(CLEANTHESIS_DIR)
+	git clone --single-branch --branch $(CLEANTHESIS_VERSION) --depth 1 $(CLEANTHESIS_GIT_REPO) $(CLEANTHESIS_DIR)
+
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
 eisvogel: EISVOGEL += -M eisvogel=true
 eisvogel: OPTIONS  += --template=$(EISVOGEL_DIR)/eisvogel.tex
@@ -104,4 +112,4 @@ distclean: clean
 	rm -f $(TARGET)
 
 
-.PHONY: all simple eisvogel cleanthesis docker clean distclean eisvogel-template-dl
+.PHONY: all simple eisvogel cleanthesis docker clean distclean eisvogel-template-dl cleanthesis-template-dl
