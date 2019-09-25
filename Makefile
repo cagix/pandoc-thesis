@@ -69,7 +69,7 @@ OPTIONS     += $(CLEANTHESIS)
 simple: $(TARGET)
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel-template-dl:
+eisvogel-dl:
 	rm -rf $(EISVOGEL_DIR)
 	git clone --single-branch --branch $(EISVOGEL_VERSION) --depth 1 $(EISVOGEL_GIT_REPO) $(EISVOGEL_DIR)
 	cp $(EISVOGEL_DIR)/eisvogel.tex eisvogel.tex
@@ -79,7 +79,7 @@ eisvogel: OPTIONS  += --template=eisvogel.tex
 eisvogel: $(TARGET)
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
-cleanthesis-template-dl:
+cleanthesis-dl:
 	rm -rf $(CLEANTHESIS_DIR)
 	git clone --single-branch --branch $(CLEANTHESIS_VERSION) --depth 1 $(CLEANTHESIS_GIT_REPO) $(CLEANTHESIS_DIR)
 	cp $(CLEANTHESIS_DIR)/cleanthesis.sty cleanthesis.sty
@@ -110,4 +110,4 @@ distclean: clean
 	rm -f $(TARGET)
 
 
-.PHONY: all simple eisvogel cleanthesis docker clean distclean eisvogel-template-dl cleanthesis-template-dl
+.PHONY: all simple eisvogel cleanthesis docker clean distclean eisvogel-dl cleanthesis-dl
