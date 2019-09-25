@@ -1,17 +1,15 @@
 
 ## Path to this repository and setup docker
-
 PWD          = $(shell pwd)
 PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
 
 ## Template variables
+TMP_DIR                 = tmp
+TEMPLATES_DIR           = $(TMP_DIR)/templates
 
-TMP_DIR         = tmp
-TEMPLATES_DIR   = $(TMP_DIR)/templates
-
-EISVOGEL_DIR        = $(TEMPLATES_DIR)/eisvogel
-EISVOGEL_VERSION    = v1.2.4
-EISVOGEL_GIT_REPO   = https://github.com/Wandmalfarbe/pandoc-latex-template.git
+EISVOGEL_DIR            = $(TEMPLATES_DIR)/eisvogel
+EISVOGEL_VERSION        = v1.2.4
+EISVOGEL_GIT_REPO       = https://github.com/Wandmalfarbe/pandoc-latex-template.git
 
 CLEANTHESIS_DIR         = $(TEMPLATES_DIR)/cleanthesis
 CLEANTHESIS_VERSION     = v0.4.0
@@ -20,7 +18,6 @@ CLEANTHESIS_GIT_REPO    = https://github.com/derric/cleanthesis.git
 
 ## Source files
 ## (Adjust to your needs. Order of markdown files in SRC matters!)
-
 META         = md/metadata.yaml
 SRC          = md/introduction.md       \
                md/relatedwork.md        \
@@ -36,7 +33,6 @@ TARGET       = thesis.pdf
 
 ## Auxiliary files
 ## (Do not change!)
-
 TITLEPAGE    = titlepage.tex
 FRONTMATTER  = frontmatter.tex
 BACKMATTER   = backmatter.tex
@@ -50,7 +46,6 @@ TMP          = $(TMP1) $(TMP2) $(TMP3)
 
 
 ## Pandoc options
-
 EISVOGEL    =
 CLEANTHESIS =
 
@@ -71,11 +66,9 @@ OPTIONS     += $(CLEANTHESIS)
 ## Targets
 
 ## Simple book layout
-
 simple: $(TARGET)
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-
 eisvogel-template-dl:
 	rm -rf $(EISVOGEL_DIR)
 	git clone --single-branch --branch $(EISVOGEL_VERSION) --depth 1 $(EISVOGEL_GIT_REPO) $(EISVOGEL_DIR)
@@ -86,7 +79,6 @@ eisvogel: OPTIONS  += --template=eisvogel.tex
 eisvogel: $(TARGET)
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
-
 cleanthesis-template-dl:
 	rm -rf $(CLEANTHESIS_DIR)
 	git clone --single-branch --branch $(CLEANTHESIS_VERSION) --depth 1 $(CLEANTHESIS_GIT_REPO) $(CLEANTHESIS_DIR)
