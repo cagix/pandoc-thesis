@@ -76,6 +76,7 @@ eisvogel-dl:
 
 eisvogel: EISVOGEL += -M eisvogel=true
 eisvogel: OPTIONS  += --template=eisvogel.tex
+eisvogel: eisvogel-dl
 eisvogel: $(TARGET)
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
@@ -86,6 +87,7 @@ cleanthesis-dl:
 
 cleanthesis: CLEANTHESIS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
 cleanthesis: OPTIONS     += --include-in-header=include-header.tex
+cleanthesis: cleanthesis-dl
 cleanthesis: $(TARGET)
 
 
