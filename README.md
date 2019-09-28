@@ -58,7 +58,11 @@ debian              stable-slim         b861b2eb769f        11 days ago         
     *   To remove temporary (generated) filed: `make clean`
     *   To also remove the generated thesis (PDF): `make distclean`
 
-The above mentioned files constitute a minimal working example. You can start your own project by just customizing those files.
+The above mentioned files constitute a minimal working example. To start your own project, simply clone this project and customize
+the files mentioned above.
+
+**Note**: *When switching between templates, please make sure to `make clean` first! Failing to do so may lead to strange behaviour
+or even to weird errors.*
 
 
 ## Preview
