@@ -81,7 +81,7 @@ define template-dl
 	$(eval TEMPLATE_VERSION  = $(or $(TEMPLATE_VERSION),$(4)))
 
 	rm -rf $(TEMPLATE_DIR)
-	git clone --single-branch --branch $(TEMPLATE_VERSION) --depth 1 $(TEMPLATE_GIT_REPO) $(TEMPLATE_DIR)
+	git clone --quiet --single-branch --branch $(TEMPLATE_VERSION) --depth 1 $(TEMPLATE_GIT_REPO) $(TEMPLATE_DIR) 2>/dev/null
 	cp $(TEMPLATE_DIR)/$(TEMPLATE_FILE) ./$(TEMPLATE_FILE)
 endef
 
