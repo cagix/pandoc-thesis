@@ -1,21 +1,18 @@
 
-## Path to this repository and setup docker
-PWD          = $(shell pwd)
-PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
+###############################################################################
+## Setup (public)
+###############################################################################
 
-## Template variables
-TMP_DIR                 = ./tmp
 
-TEMPLATE_NAME           =
-TEMPLATE_FILE           =
-TEMPLATE_DIR            = $(TMP_DIR)/templates/$(TEMPLATE_NAME)
-TEMPLATE_GIT_REPO       =
-TEMPLATE_VERSION        =
-
+## Pandoc
+## (Defaults to docker. To use pandoc and TeX-Live directly, create an
+## environment variable `PANDOC` pointing to the location of your
+## pandoc installation.)
+PANDOC      ?= docker run --rm -v $(shell pwd):/pandoc pandoc-thesis pandoc
 
 
 ## Source files
-## (Adjust to your needs. Order of markdown files in SRC matters!)
+## (Adjust to your needs. Order of markdown files in $(SRC) matters!)
 META         = md/metadata.yaml
 SRC          = md/introduction.md       \
                md/relatedwork.md        \
@@ -29,6 +26,13 @@ TARGET       = thesis.pdf
 
 
 
+
+
+###############################################################################
+## Setup (internal: do not change)
+###############################################################################
+
+
 ## Auxiliary files
 ## (Do not change!)
 TITLEPAGE    = titlepage.tex
@@ -40,7 +44,6 @@ TMP1         = $(TITLEPAGE:%.tex=__%.filled.tex)
 TMP2         = $(FRONTMATTER:%.tex=__%.filled.tex)
 TMP3         = $(BACKMATTER:%.tex=__%.filled.tex)
 TMP          = $(TMP1) $(TMP2) $(TMP3)
-
 
 
 ## Pandoc options
@@ -60,9 +63,17 @@ OPTIONS     += $(EISVOGEL)
 OPTIONS     += $(CLEANTHESIS)
 
 
+## Template variables
+TMP_DIR                 = ./tmp
+
+TEMPLATE_NAME           =
+TEMPLATE_FILE           =
+TEMPLATE_DIR            = $(TMP_DIR)/templates/$(TEMPLATE_NAME)
+TEMPLATE_GIT_REPO       =
+TEMPLATE_VERSION        =
+
 
 ## Functions
-
 define template-dl
 	$(eval TEMPLATE_NAME     = $(or $(TEMPLATE_NAME),$(1)))
 	$(eval TEMPLATE_FILE     = $(or $(TEMPLATE_FILE),$(2)))
@@ -76,10 +87,16 @@ endef
 
 
 
-## Targets
+
+
+###############################################################################
+## Targets (internal: do not change)
+###############################################################################
+
 
 ## Simple book layout
 simple: $(TARGET)
+
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
 eisvogel.tex:
@@ -88,6 +105,7 @@ eisvogel.tex:
 eisvogel: EISVOGEL  += -M eisvogel=true
 eisvogel: OPTIONS   += --template=eisvogel.tex
 eisvogel: eisvogel.tex $(TARGET)
+
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
 cleanthesis.sty:
@@ -98,23 +116,27 @@ cleanthesis: OPTIONS     += --include-in-header=include-header.tex
 cleanthesis: cleanthesis.sty $(TARGET)
 
 
-
+## Build thesis
 ${TARGET}: $(SRC) $(REFERENCES) $(APPENDIX) $(META) $(BIBFILE) $(TMP)
 	$(PANDOC) ${OPTIONS} -o $@ $(SRC) $(REFERENCES) $(APPENDIX)
 
+
+## Build auxiliary files (title page, frontmatter, backmater, references)
 $(TMP): __%.filled.tex: %.tex $(META)
 	$(PANDOC) $(EISVOGEL) $(CLEANTHESIS) --template=$< --metadata-file=$(META) -o $@ $<
 
 
-
+## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
 docker:
 	cd docker && make
 
 
-
+## Clean-up: Remove temporary (generated) files and download folder
 clean:
 	rm -rf $(TMP) $(TMP_DIR)
 
+
+## Clean-up: Remove also genereated thesis and template files
 distclean: clean
 	rm -f $(TARGET) eisvogel.tex cleanthesis.sty
 
