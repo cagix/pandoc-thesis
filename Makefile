@@ -68,11 +68,11 @@ TEMPLATE_DL_DIR         = .tmp_template_dl
 
 EISVOGEL_TEMPLATE       = eisvogel.tex
 EISVOGEL_REPO           = https://github.com/Wandmalfarbe/pandoc-latex-template
-EISVOGEL_VERSION        = v1.2.4
+EISVOGEL_VERSION        = 7eff8ff442
 
 CLEANTHESIS_TEMPLATE    = cleanthesis.sty
 CLEANTHESIS_REPO        = https://github.com/derric/cleanthesis
-CLEANTHESIS_VERSION     = v0.4.0
+CLEANTHESIS_VERSION     = c4609c4c70
 
 TEMPLATE_FILES          = $(EISVOGEL_TEMPLATE) $(CLEANTHESIS_TEMPLATE)
 
@@ -133,7 +133,8 @@ distclean: clean
 ## Download template files
 $(TEMPLATE_FILES):
 	rm -rf $(TEMPLATE_DL_DIR)
-	git clone --quiet --single-branch --branch $(TEMPLATE_VERSION) --depth 1 $(TEMPLATE_REPO) $(TEMPLATE_DL_DIR) 2>/dev/null
+	git clone --quiet --single-branch --branch master --depth 100 $(TEMPLATE_REPO) $(TEMPLATE_DL_DIR)
+	cd $(TEMPLATE_DL_DIR) && git checkout --quiet $(TEMPLATE_VERSION)
 	cp $(TEMPLATE_DL_DIR)/$(TEMPLATE_FILE) ./$(TEMPLATE_FILE)
 	rm -rf $(TEMPLATE_DL_DIR)
 
