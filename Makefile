@@ -47,8 +47,7 @@ TMP          = $(TMP1) $(TMP2) $(TMP3)
 
 
 ## Pandoc options
-EISVOGEL    =
-CLEANTHESIS =
+AUX_OPTS     =
 
 OPTIONS      = -f markdown
 OPTIONS     += --pdf-engine=pdflatex
@@ -59,8 +58,6 @@ OPTIONS     += --listings
 OPTIONS     += --include-in-header=$(TMP1)
 OPTIONS     += --include-before-body=$(TMP2)
 OPTIONS     += --include-after-body=$(TMP3)
-OPTIONS     += $(EISVOGEL)
-OPTIONS     += $(CLEANTHESIS)
 
 
 ## Template variables
@@ -102,8 +99,8 @@ simple: $(TARGET)
 eisvogel.tex:
 	$(call template-dl,eisvogel,eisvogel.tex,https://github.com/Wandmalfarbe/pandoc-latex-template,v1.2.4)
 
-eisvogel: EISVOGEL  += -M eisvogel=true
-eisvogel: OPTIONS   += --template=eisvogel.tex
+eisvogel: AUX_OPTS  += -M eisvogel=true
+eisvogel: OPTIONS   += --template=eisvogel.tex $(AUX_OPTS)
 eisvogel: eisvogel.tex $(TARGET)
 
 
@@ -111,8 +108,8 @@ eisvogel: eisvogel.tex $(TARGET)
 cleanthesis.sty:
 	$(call template-dl,cleanthesis,cleanthesis.sty,https://github.com/derric/cleanthesis,v0.4.0)
 
-cleanthesis: CLEANTHESIS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
-cleanthesis: OPTIONS     += --include-in-header=include-header.tex
+cleanthesis: AUX_OPTS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
+cleanthesis: OPTIONS  += --include-in-header=include-header.tex $(AUX_OPTS)
 cleanthesis: cleanthesis.sty $(TARGET)
 
 
@@ -123,7 +120,7 @@ ${TARGET}: $(SRC) $(REFERENCES) $(APPENDIX) $(META) $(BIBFILE) $(TMP)
 
 ## Build auxiliary files (title page, frontmatter, backmater, references)
 $(TMP): __%.filled.tex: %.tex $(META)
-	$(PANDOC) $(EISVOGEL) $(CLEANTHESIS) --template=$< --metadata-file=$(META) -o $@ $<
+	$(PANDOC) $(AUX_OPTS) --template=$< --metadata-file=$(META) -o $@ $<
 
 
 ## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
