@@ -61,26 +61,17 @@ OPTIONS     += --include-after-body=$(TMP3)
 
 
 ## Template variables
-TMP_DIR                 = ./tmp
+TEMPLATE_DL_DIR         = .tmp_template_dl
 
-TEMPLATE_NAME           =
-TEMPLATE_FILE           =
-TEMPLATE_DIR            = $(TMP_DIR)/templates/$(TEMPLATE_NAME)
-TEMPLATE_GIT_REPO       =
-TEMPLATE_VERSION        =
+EISVOGEL_TEMPLATE       = eisvogel.tex
+EISVOGEL_REPO           = https://github.com/Wandmalfarbe/pandoc-latex-template
+EISVOGEL_VERSION        = v1.2.4
 
+CLEANTHESIS_TEMPLATE    = cleanthesis.sty
+CLEANTHESIS_REPO     	= https://github.com/derric/cleanthesis
+CLEANTHESIS_VERSION     = v0.4.0
 
-## Functions
-define template-dl
-	$(eval TEMPLATE_NAME     = $(or $(TEMPLATE_NAME),$(1)))
-	$(eval TEMPLATE_FILE     = $(or $(TEMPLATE_FILE),$(2)))
-	$(eval TEMPLATE_GIT_REPO = $(or $(TEMPLATE_GIT_REPO),$(3)))
-	$(eval TEMPLATE_VERSION  = $(or $(TEMPLATE_VERSION),$(4)))
-
-	rm -rf $(TEMPLATE_DIR)
-	git clone --quiet --single-branch --branch $(TEMPLATE_VERSION) --depth 1 $(TEMPLATE_GIT_REPO) $(TEMPLATE_DIR) 2>/dev/null
-	cp $(TEMPLATE_DIR)/$(TEMPLATE_FILE) ./$(TEMPLATE_FILE)
-endef
+TEMPLATE_FILES          = $(EISVOGEL_TEMPLATE) $(CLEANTHESIS_TEMPLATE)
 
 
 
@@ -96,21 +87,31 @@ simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel.tex:
-	$(call template-dl,eisvogel,eisvogel.tex,https://github.com/Wandmalfarbe/pandoc-latex-template,v1.2.4)
+eisvogel: TEMPLATE_FILE    += $(EISVOGEL_TEMPLATE)
+eisvogel: TEMPLATE_REPO    += $(EISVOGEL_REPO)
+eisvogel: TEMPLATE_VERSION += $(EISVOGEL_VERSION)
 
-eisvogel: AUX_OPTS  += -M eisvogel=true
-eisvogel: OPTIONS   += --template=eisvogel.tex $(AUX_OPTS)
-eisvogel: eisvogel.tex $(TARGET)
+eisvogel: AUX_OPTS += -M eisvogel=true
+eisvogel: OPTIONS  += --template=$(EISVOGEL_TEMPLATE) $(AUX_OPTS)
+eisvogel: $(EISVOGEL_TEMPLATE) $(TARGET)
 
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
-cleanthesis.sty:
-	$(call template-dl,cleanthesis,cleanthesis.sty,https://github.com/derric/cleanthesis,v0.4.0)
+cleanthesis: TEMPLATE_FILE    += $(CLEANTHESIS_TEMPLATE)
+cleanthesis: TEMPLATE_REPO    += $(CLEANTHESIS_REPO)
+cleanthesis: TEMPLATE_VERSION += $(CLEANTHESIS_VERSION)
 
 cleanthesis: AUX_OPTS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
 cleanthesis: OPTIONS  += --include-in-header=include-header.tex $(AUX_OPTS)
-cleanthesis: cleanthesis.sty $(TARGET)
+cleanthesis: $(CLEANTHESIS_TEMPLATE) $(TARGET)
+
+
+## Download template files
+$(TEMPLATE_FILES):
+	rm -rf $(TEMPLATE_DL_DIR)
+	git clone --quiet --single-branch --branch $(TEMPLATE_VERSION) --depth 1 $(TEMPLATE_REPO) $(TEMPLATE_DL_DIR) 2>/dev/null
+	cp $(TEMPLATE_DL_DIR)/$(TEMPLATE_FILE) ./$(TEMPLATE_FILE)
+	rm -rf $(TEMPLATE_DL_DIR)
 
 
 ## Build thesis
@@ -130,13 +131,13 @@ docker:
 
 ## Clean-up: Remove temporary (generated) files and download folder
 clean:
-	rm -rf $(TMP) $(TMP_DIR)
+	rm -rf $(TMP) $(TEMPLATE_DL_DIR)
 
 
 ## Clean-up: Remove also genereated thesis and template files
 distclean: clean
-	rm -f $(TARGET) eisvogel.tex cleanthesis.sty
+	rm -f $(TARGET) $(TEMPLATE_FILES)
 
 
 
-.PHONY: all simple eisvogel cleanthesis docker clean distclean template-dl
+.PHONY: simple eisvogel cleanthesis docker clean distclean
