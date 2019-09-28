@@ -38,6 +38,8 @@ debian              stable-slim         b861b2eb769f        11 days ago         
     project folder
     (**Note**: Latest tested commit is [`c4609c4c70`](https://github.com/derric/cleanthesis/blob/c4609c4c70d718876c3cbf7aa46d80b26299612e/cleanthesis.sty).)
 
+**Note**: If the template files do not yet exist in the project folder, `make eisvogel` and/or `make cleanthesis` will download them.
+
 
 ## Usage Example
 
