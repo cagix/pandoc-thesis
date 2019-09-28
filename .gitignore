@@ -248,3 +248,13 @@ __backmatter.filled.tex
 
 .DS_Store
 
+# Temporary files
+tmp/
+
+# Template files
+eisvogel.tex
+cleanthesis.sty
+
+# Generated PDF artifact
+thesis.pdf
+

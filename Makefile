@@ -1,14 +1,21 @@
 
 ## Path to this repository and setup docker
-
 PWD          = $(shell pwd)
 PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc
+
+## Template variables
+TMP_DIR                 = ./tmp
+
+TEMPLATE_NAME           =
+TEMPLATE_FILE           =
+TEMPLATE_DIR            = $(TMP_DIR)/templates/$(TEMPLATE_NAME)
+TEMPLATE_GIT_REPO       =
+TEMPLATE_VERSION        =
 
 
 
 ## Source files
 ## (Adjust to your needs. Order of markdown files in SRC matters!)
-
 META         = md/metadata.yaml
 SRC          = md/introduction.md       \
                md/relatedwork.md        \
@@ -24,7 +31,6 @@ TARGET       = thesis.pdf
 
 ## Auxiliary files
 ## (Do not change!)
-
 TITLEPAGE    = titlepage.tex
 FRONTMATTER  = frontmatter.tex
 BACKMATTER   = backmatter.tex
@@ -38,7 +44,6 @@ TMP          = $(TMP1) $(TMP2) $(TMP3)
 
 
 ## Pandoc options
-
 EISVOGEL    =
 CLEANTHESIS =
 
@@ -56,20 +61,41 @@ OPTIONS     += $(CLEANTHESIS)
 
 
 
+## Functions
+
+define template-dl
+	$(eval TEMPLATE_NAME     = $(or $(TEMPLATE_NAME),$(1)))
+	$(eval TEMPLATE_FILE     = $(or $(TEMPLATE_FILE),$(2)))
+	$(eval TEMPLATE_GIT_REPO = $(or $(TEMPLATE_GIT_REPO),$(3)))
+	$(eval TEMPLATE_VERSION  = $(or $(TEMPLATE_VERSION),$(4)))
+
+	rm -rf $(TEMPLATE_DIR)
+	git clone --single-branch --branch $(TEMPLATE_VERSION) --depth 1 $(TEMPLATE_GIT_REPO) $(TEMPLATE_DIR)
+	cp $(TEMPLATE_DIR)/$(TEMPLATE_FILE) ./$(TEMPLATE_FILE)
+endef
+
+
+
 ## Targets
 
 ## Simple book layout
 simple: $(TARGET)
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel: EISVOGEL += -M eisvogel=true
-eisvogel: OPTIONS  += --template=eisvogel.tex
-eisvogel: $(TARGET)
+eisvogel.tex:
+	$(call template-dl,eisvogel,eisvogel.tex,https://github.com/Wandmalfarbe/pandoc-latex-template,v1.2.4)
+
+eisvogel: EISVOGEL  += -M eisvogel=true
+eisvogel: OPTIONS   += --template=eisvogel.tex
+eisvogel: eisvogel.tex $(TARGET)
 
 ## Use Clean Thesis template (https://github.com/derric/cleanthesis)
+cleanthesis.sty:
+	$(call template-dl,cleanthesis,cleanthesis.sty,https://github.com/derric/cleanthesis,v0.4.0)
+
 cleanthesis: CLEANTHESIS += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
 cleanthesis: OPTIONS     += --include-in-header=include-header.tex
-cleanthesis: $(TARGET)
+cleanthesis: cleanthesis.sty $(TARGET)
 
 
 
@@ -87,10 +113,11 @@ docker:
 
 
 clean:
-	rm -f $(TMP)
+	rm -rf $(TMP) $(TMP_DIR)
 
 distclean: clean
-	rm -f $(TARGET)
+	rm -f $(TARGET) eisvogel.tex cleanthesis.sty
 
 
-.PHONY: all simple eisvogel cleanthesis docker clean distclean
+
+.PHONY: all simple eisvogel cleanthesis docker clean distclean template-dl
