@@ -1,9 +1,14 @@
 ---
-## mandatory (subtitle is optional)
+## mandatory (subtitle and header-left are optional)
 title: "Title of my Thesis"
 #subtitle: "From Markdown to LaTeX to PDF"
 author: "Surname Name"
 keywords: [Markdown, Example]
+
+### really long titles may require (multiple) line break(s) in page headers when using Eisvogel
+### activate "header-left" to define a shortened single-line version of your long title to be used in page headers
+#header-left: "Shortened version of title for running page headers ..."
+### ("header-left" is a meta-data variable in the Eisvogel template)
 
 studentnumber: "12345678"
 date: "20. Juli 2019"
