@@ -45,18 +45,22 @@ debian              stable-slim         b861b2eb769f        11 days ago         
 
 1.  Maintain your references in [`references.bib`](references.bib)
 2.  Put the title of your thesis, your name and other meta information in [`md/metadata.yaml`](md/metadata.yaml)
-3.  Fill the markdown files under [`md/`](md)
+3.  Adjust optional definitions in [`md/metadata.yaml`](md/metadata.yaml) to your needs:
+    -   Disable extras like `abstract-*` or `acknowledgements` or `restrictionnote`: Remove or comment this optional definitions
+    -   Modify content (text) of optional definitions like `abstract-*` or `acknowledgements` or `restrictionnote`
+    -   If you like Eisvogel but want a more useful`^W`conventional page header (i.e. chapter/section instead of the thesis title) activate (i.e. remove comment in front of) `headeralternative`
+4.  Fill the markdown files under [`md/`](md) with your content
     *   The default files in the folder [`md/`](md) correspond to a typical structure of a scientific thesis (see also
         `@Balzert2017`: *Balzert et al.* "Wissenschaftliches Arbeiten", Springer, 2017). You can just use this as starting
         point for your work ...  *Hint*: You will find some help regarding the use of Markdown in
         [`md/introduction.md`](md/introduction.md) as well as typical number of pages for each chapter in the comment section
         of each file.
     *   In case you see need for an other layout, please do not forget to reflect the changed filenames in [`Makefile`](Makefile).
-4.  Build the thesis:
+5.  Build the thesis:
     *   Using the simple layout: `make simple`
     *   Using Eisvogel: `make eisvogel`
     *   Using Clean Thesis: `make cleanthesis`
-5.  Clean up:
+6.  Clean up:
     *   To remove temporary (generated) filed: `make clean`
     *   To also remove the generated thesis (PDF): `make distclean`
 
