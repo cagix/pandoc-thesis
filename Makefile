@@ -68,7 +68,7 @@ TEMPLATE_DL_DIR         = .tmp_template_dl
 
 EISVOGEL_TEMPLATE       = eisvogel.tex
 EISVOGEL_REPO           = https://github.com/Wandmalfarbe/pandoc-latex-template
-EISVOGEL_VERSION        = 7eff8ff442
+EISVOGEL_VERSION        = 36e92c5eeb
 
 CLEANTHESIS_TEMPLATE    = cleanthesis.sty
 CLEANTHESIS_REPO        = https://github.com/derric/cleanthesis
