@@ -10,6 +10,9 @@ keywords: [Markdown, Example]
 #header-left: "Shortened version of title for running page headers ..."
 ### ("header-left" is a meta-data variable in the Eisvogel template)
 
+### activate "headeralternative" to use chapter/section in header instead of title
+#headeralternative: true
+
 studentnumber: "12345678"
 date: "20. Juli 2019"
 
