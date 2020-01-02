@@ -23,13 +23,18 @@ genutzt werden (ggf. muss noch das jeweilige Paket importiert werden).
 
 ## Zitieren
 
-Einfach: [@Dietz2018] ... Mit Seiten- oder Kapitelangabe: [@Dietz2018, Seite 111] oder [@Dietz2018, Kapitel 111] ...
+Einfach den Bibtex-Key mit einem `@` davor in eckigen Klammern schreiben: Aus `[@Dietz2018]` wird [@Dietz2018] ...
+Mit Seiten- oder Kapitelangabe: Aus `[@Dietz2018, Seite 111]` oder `[@Dietz2018, Kapitel 111]` wird
+[@Dietz2018, Seite 111] oder [@Dietz2018, Kapitel 111] ...
 
 Pandoc (bzw. `pandoc-citeproc`) nutzt per Default den *Chicago Manual of Style*-Stil^[vgl.
 [pandoc.org/MANUAL.html#citations](https://pandoc.org/MANUAL.html#citations)].
 Für andere Zitierstile (etwa numerisch oder als Fußnote) sind auf [zotero.org/styles](https://www.zotero.org/styles)
 die passenden CSL-Dateien zum Download zu finden. Die Aktivierung erfolgt über die Option
 `csl: "XXX.csl"` in der Datei `./md/metadata.yaml`.
+
+**Tipp**: Unter [editor.citationstyles.org/searchByName/](https://editor.citationstyles.org/searchByName/)
+können Sie sich die Wirkung der jeweiligen Zitierstile/CSL-Definitionen anschauen.
 
 
 ## Abbildungen
