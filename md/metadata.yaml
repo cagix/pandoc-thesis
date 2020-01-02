@@ -6,11 +6,11 @@ author: "Surname Name"
 keywords: [Markdown, Example]
 
 ### really long titles may require (multiple) line break(s) in page headers when using Eisvogel
-### activate "header-left" to define a shortened single-line version of your long title to be used in page headers
+### activate (i.e. uncomment the next line) "header-left" to define a shortened single-line version of your long title to be used in page headers
 #header-left: "Shortened version of title for running page headers ..."
-### ("header-left" is a meta-data variable in the Eisvogel template)
+### (note to myself: "header-left" is a meta-data variable in the Eisvogel template)
 
-### activate "headeralternative" to use chapter/section in header instead of title
+### activate (i.e. uncomment the next line) "headeralternative" to use chapter/section in header instead of title
 #headeralternative: true
 
 studentnumber: "12345678"
