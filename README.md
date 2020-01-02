@@ -97,6 +97,7 @@ or even to weird errors.*
 
 # License
 
-Copyright (c) 2019, Carsten Gips
+Copyright (c) 2019-20, Carsten Gips
 
-[MIT licensed](http://opensource.org/licenses/MIT)
+[MIT licensed](https://opensource.org/licenses/MIT)
+
