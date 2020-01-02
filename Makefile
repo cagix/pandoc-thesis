@@ -50,7 +50,7 @@ TMP                     = $(TMP1) $(TMP2) $(TMP3)
 
 
 ## Pandoc options
-AUX_OPTS                =
+AUX_OPTS                = --wrap=preserve
 
 OPTIONS                 = -f markdown
 OPTIONS                += --pdf-engine=pdflatex
