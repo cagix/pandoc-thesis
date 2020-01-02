@@ -56,11 +56,15 @@ debian              stable-slim         eb8569e750e6        5 days ago          
         [`md/introduction.md`](md/introduction.md) as well as typical number of pages for each chapter in the comment section
         of each file.
     *   In case you see need for an other layout, please do not forget to reflect the changed filenames in [`Makefile`](Makefile).
-5.  Build the thesis:
+5.  Pandoc uses per default the *Chicago Manual of Style* for citations (cf. [pandoc.org/MANUAL.html#citations](https://pandoc.org/MANUAL.html#citations)).
+    You can search [zotero.org/styles](https://www.zotero.org/styles) or [editor.citationstyles.org/searchByName](https://editor.citationstyles.org/searchByName/)
+    for alternative style definitions, download the corresponding `.csl` file to your project folder and activate the style in the
+    [`Makefile`](Makefile) (option `--csl=XXX.csl`).
+6.  Build the thesis:
     *   Using the simple layout: `make simple`
     *   Using Eisvogel: `make eisvogel`
     *   Using Clean Thesis: `make cleanthesis`
-6.  Clean up:
+7.  Clean up:
     *   To remove temporary (generated) filed: `make clean`
     *   To also remove the generated thesis (PDF): `make distclean`
 
