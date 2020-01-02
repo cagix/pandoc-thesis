@@ -31,7 +31,7 @@ Pandoc (bzw. `pandoc-citeproc`) nutzt per Default den *Chicago Manual of Style*-
 [pandoc.org/MANUAL.html#citations](https://pandoc.org/MANUAL.html#citations)].
 Für andere Zitierstile (etwa numerisch oder als Fußnote) sind auf [zotero.org/styles](https://www.zotero.org/styles)
 die passenden CSL-Dateien zum Download zu finden. Die Aktivierung erfolgt über die Option
-`csl: "XXX.csl"` in der Datei `./md/metadata.yaml`.
+`--csl=XXX.csl` in der Datei `Makefile`.
 
 **Tipp**: Unter [editor.citationstyles.org/searchByName/](https://editor.citationstyles.org/searchByName/)
 können Sie sich die Wirkung der jeweiligen Zitierstile/CSL-Definitionen anschauen.

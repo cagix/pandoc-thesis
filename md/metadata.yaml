@@ -20,49 +20,6 @@ reviewer1:  "XXX, FH Bielefeld"
 reviewer2:  "XXX, Wuppie GmbH"
 
 
-## misc. settings
-lang: de-DE
-
-documentclass: scrbook
-classoption:
-- open=right
-- twoside=true
-- cleardoublepage=empty
-- clearpage=empty
-papersize: a4
-fontsize: 11pt
-geometry:
-- top=30mm
-- left=25mm
-- bottom=30mm
-- width=150mm
-- bindingoffset=6mm
-
-colorlinks: true
-numbersections: true
-
-toc: true
-toc-depth: 2
-
-
-## Eisvogel (do not change!)
-## https://github.com/Wandmalfarbe/pandoc-latex-template
-book: true
-titlepage: true
-toc-own-page: true
-
-
-## optional (bibliography already set up in Makefile)
-#bibliography: references.bib
-link-citations: true
-## download from https://www.zotero.org/styles
-## cf. https://pandoc.org/MANUAL.html#citations
-#csl: "chicago-author-date-de.csl"
-#csl: "chicago-note-bibliography.csl"
-#csl: "ieee.csl"
-#csl: "oxford-university-press-note.csl"
-
-
 ## optional (mandatory, if english abstract enabled)
 abstract-de: |
   Dies ist die Zusammenfassung auf Deutsch.
