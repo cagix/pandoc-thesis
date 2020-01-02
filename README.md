@@ -14,8 +14,8 @@ A Template for Thesis Documents written in Markdown
 ```
 $ docker image ls
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-pandoc-thesis       latest              9b8e245781ab        3 days ago          1.98GB
-debian              stable-slim         b861b2eb769f        11 days ago         69.2MB
+pandoc-thesis       latest              b8680fd61337        10 seconds ago      2GB
+debian              stable-slim         eb8569e750e6        5 days ago          69.2MB
 ```
 
 ### Alternative Route
