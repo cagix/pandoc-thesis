@@ -117,7 +117,7 @@ clean:
 	rm -rf $(TMP) $(TEMPLATE_DL_DIR)
 
 
-## Clean-up: Remove also genereated thesis and template files
+## Clean-up: Remove also generated thesis and template files
 distclean: clean
 	rm -f $(TARGET) $(TEMPLATE_FILES)
 
@@ -144,7 +144,7 @@ ${TARGET}: $(SRC) $(REFERENCES) $(APPENDIX) $(META) $(BIBFILE) $(TMP)
 	$(PANDOC) ${OPTIONS} -o $@ $(SRC) $(REFERENCES) $(APPENDIX)
 
 
-## Build auxiliary files (title page, frontmatter, backmater, references)
+## Build auxiliary files (title page, frontmatter, backmatter, references)
 $(TMP): __%.filled.tex: %.tex $(META)
 	$(PANDOC) $(AUX_OPTS) --template=$< --metadata-file=$(META) -o $@ $<
 
