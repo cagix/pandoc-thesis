@@ -11,7 +11,7 @@ keywords: [Markdown, Example]
 ### (note to myself: "header-left" is a meta-data variable in the Eisvogel template)
 
 ### activate (i.e. uncomment the next line) "headeralternative" to use chapter/section in header instead of title
-#headeralternative: true
+headeralternative: true
 
 studentnumber: "12345678"
 date: "20. Juli 2019"
