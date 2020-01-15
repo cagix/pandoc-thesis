@@ -39,12 +39,12 @@ können Sie sich die Wirkung der jeweiligen Zitierstile/CSL-Definitionen anschau
 
 ## Abbildungen
 
-![Hier steht die Bildunterschrift \label{fig:foo}](figs/wuppie.png){width=80%}
+![Hier steht die Bildunterschrift, Quelle: [@Dietz2018] \label{fig:foo}](figs/wuppie.png){width=80%}
 
 
 ## Source-Code
 
-```{.python caption="The preprocessing step" #lst:huh}
+```{.python caption="The preprocessing step, cf. [@Dietz2018]" #lst:huh}
 def foo():
   """ Wuppie! """
   pass
@@ -70,7 +70,7 @@ Inline-Math geht mit einem einfachen Dollar-Zeichen: $\mathbf{w} \gets \mathbf{w
 |          123 | 123         | 123     |    123    |
 |          bar | bar         | bar     |    bar    |
 
-: Tabelle als Markdown-Pipe-Table \label{tab:ugh}
+: Tabelle als Markdown-Pipe-Table, vgl. [@Dietz2018] \label{tab:ugh}
 
 
 Leider gibt es derzeit einen Bug (siehe [github.com/Wandmalfarbe/pandoc-latex-template/issues/29](https://github.com/Wandmalfarbe/pandoc-latex-template/issues/29)
