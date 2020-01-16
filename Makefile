@@ -136,6 +136,7 @@ eisvogel: TEMPLATE_VERSION += $(EISVOGEL_VERSION)
 eisvogel: AUX_OPTS         += -M eisvogel=true
 eisvogel: OPTIONS          += --template=$(EISVOGEL_TEMPLATE) $(AUX_OPTS)
 eisvogel: OPTIONS          += -V float-placement-figure=htbp
+eisvogel: OPTIONS          += -V listings-no-page-break=true
 eisvogel: $(EISVOGEL_TEMPLATE) $(TARGET)
 
 
