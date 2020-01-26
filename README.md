@@ -24,7 +24,7 @@ debian              stable-slim         eb8569e750e6        5 days ago          
 2.  You also need to install LaTeX, e.g. from <https://www.tug.org/texlive/>
 3.  Install packages needed by pandoc: <https://pandoc.org/MANUAL.html#creating-a-pdf>
 4.  Either set an environment variable `PANDOC` pointing to the location of your pandoc installation or change the
-    line `PANDOC      ?= docker run --rm -v $(PWD):/pandoc pandoc-thesis pandoc` in the [`Makefile`](Makefile) to
+    line `PANDOC      ?= docker run --rm -v $(WORKDIR):/pandoc pandoc-thesis pandoc` in the [`Makefile`](Makefile) to
     reflect your settings
 
 ### Additional Templates
@@ -38,7 +38,7 @@ debian              stable-slim         eb8569e750e6        5 days ago          
     project folder
     (**Note**: Latest tested commit is [`c4609c4c70`](https://github.com/derric/cleanthesis/blob/c4609c4c70d718876c3cbf7aa46d80b26299612e/cleanthesis.sty).)
 
-**Note**: If the template files do not yet exist in the project folder, `make eisvogel` and/or `make cleanthesis` will download them.
+**Note**: If the template files do not yet exist in the project folder, use `make eisvogel` or `make cleanthesis` to download them.
 
 
 ## Usage Example
@@ -73,6 +73,9 @@ the files mentioned above.
 
 **Note**: *When switching between templates, please make sure to `make clean` first! Failing to do so may lead to strange behaviour
 or even to weird errors.*
+
+**Note**: In rare circumstances, e.g. when using Cygwin, the path to the working directory is not correctly recognized by `make`.
+In this case, set it manually by overwriting the variable `WORKDIR` in the [`Makefile`](Makefile) (use absolute paths).
 
 
 ## Preview
