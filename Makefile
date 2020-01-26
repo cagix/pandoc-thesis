@@ -6,7 +6,7 @@
 
 ## Working directory
 ## In case this doesn't work, set the path manually (use absolute paths).
-WORKDIR                 = $(shell pwd)
+WORKDIR                 = $(CURDIR)
 
 
 ## Pandoc
