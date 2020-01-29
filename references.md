@@ -8,6 +8,8 @@ References are automatically generated from the BibTex file (references.bib)
 
 # Literatur {.unnumbered}
 
+\markboth{Literatur}{Literatur}
+
 ::: {#refs}
 :::
 
