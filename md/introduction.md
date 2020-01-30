@@ -106,3 +106,10 @@ Vgl. Abbildung \ref{fig:foo} oder Tabelle \ref{tab:ugh} oder Listing \ref{lst:hu
 Wer mehr braucht, kann sogenannte Filter^[vgl. [pandoc.org/filters.html](https://pandoc.org/filters.html)
 bzw. [pandoc.org/lua-filters.html](https://pandoc.org/lua-filters.html)] einsetzen, beispielsweise
 [github.com/lierdakil/pandoc-crossref](https://github.com/lierdakil/pandoc-crossref).
+
+
+## Hinweise zum generierten PDF
+
+Das generierte PDF ist für den **doppelseitigen** Ausdruck gedacht. Wie bei einem Buch fangen neue Kapitel
+immer auf einer neuen rechten Seite an, d.h. es kann passieren, dass am Ende eines Kapitels ggf. eine leere
+Seite erzeugt wird. Dies ist durchaus beabsichtigt.
