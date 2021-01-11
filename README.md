@@ -107,6 +107,6 @@ In this case, set it manually by overwriting the variable `WORKDIR` in the [`Mak
 
 # License
 
-Copyright (c) 2019-20, Carsten Gips
+Copyright (c) 2019-2021, Carsten Gips
 
 [MIT licensed](https://opensource.org/licenses/MIT)
