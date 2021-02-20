@@ -57,10 +57,16 @@ $endif$
 
 %------------------------------------- Use Eisvogel Header/Footer ------------------
 $if(eisvogel)$
-\pagestyle{eisvogel-header-footer}
 $if(headeralternative)$
-\lhead[\leftmark]{$date$}
-\rhead[$date$]{\rightmark}
+    \newpairofpagestyles{headeralternative}{
+        \clearpairofpagestyles
+        \automark[section]{chapter}
+        \ihead[\headmark]{}
+        \ohead[]{\headmark}
+        \ifoot[\pagemark]{$author$}
+        \ofoot[$author$]{\pagemark}
+    }
+    \pagestyle{headeralternative}
 $endif$
 $endif$
 %------------------------------------- Use Eisvogel Header/Footer ------------------
