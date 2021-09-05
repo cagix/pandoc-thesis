@@ -107,6 +107,5 @@ In this case, set it manually by overwriting the variable `WORKDIR` in the [`Mak
 
 # License
 
-Copyright (c) 2019-2021, Carsten Gips
+This work by [Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/cagix/pandoc-thesis/graphs/contributors) is licensed under [MIT](https://opensource.org/licenses/MIT).
 
-[MIT licensed](https://opensource.org/licenses/MIT)
