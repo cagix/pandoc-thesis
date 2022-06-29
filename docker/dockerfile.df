@@ -19,7 +19,7 @@ RUN apt-get update                                                          \
         texlive-science texlive-pictures                                    \
         texlive-bibtex-extra texlive-lang-english texlive-lang-german       \
         texlive-font-utils texlive-fonts-recommended texlive-fonts-extra    \
-        fontconfig lmodern ghostscript gsfonts cm-super                     \
+        fontconfig lmodern ghostscript gsfonts cm-super librsvg2-bin        \
     #
     # Pandoc
     && wget $PANDOCDEB && dpkg -i pandoc* && rm pandoc*                     \
