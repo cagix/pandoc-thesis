@@ -1,6 +1,6 @@
-# pandoc-thesis
+# Pandoc Thesis Template
 
-A Template for Thesis Documents written in Markdown
+A Template for Thesis Documents written in Markdown.
 
 
 ## Installation
