@@ -3,7 +3,7 @@ creativeWorkStatus: Published
 type: LearningResource
 name: Pandoc Thesis Template
 description: A Template for Thesis Documents written in Markdown
-license: https://choosealicense.com/licenses/mit/
+license: https://opensource.org/license/mit
 id: https://github.com/cagix/pandoc-thesis
 creator:
   - givenName: Carsten
