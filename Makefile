@@ -130,7 +130,7 @@ eisvogel: $(TARGET)
 
 ## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
 docker:
-	cd docker && make
+	docker pull pandoc/extra:latest-ubuntu
 
 
 ## Clean-up: Remove temporary (generated) files and download folder
