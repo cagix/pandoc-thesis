@@ -251,9 +251,6 @@ __backmatter.filled.tex
 # Temporary files
 tmp/
 
-# Template files
-eisvogel.tex
-
 # Generated PDF artifact
 thesis.pdf
 

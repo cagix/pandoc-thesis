@@ -4,16 +4,11 @@
 ###############################################################################
 
 
-## Working directory
-## In case this doesn't work, set the path manually (use absolute paths).
-WORKDIR                 = $(CURDIR)
-
-
 ## Pandoc
 ## (Defaults to docker. To use pandoc and TeX-Live directly, create an
 ## environment variable `PANDOC` pointing to the location of your
 ## pandoc installation.)
-PANDOC                 ?= docker run --rm -v "$(WORKDIR):/pandoc" -w /pandoc pandoc-thesis pandoc
+PANDOC                 ?= docker run --rm --volume "`pwd`:/data" --workdir /data --user `id -u`:`id -g` pandoc/extra:latest-ubuntu
 
 
 ## Source files
@@ -108,16 +103,6 @@ OPTIONS                += -V titlepage=true
 OPTIONS                += -V toc-own-page=true
 
 
-## Template variables
-TEMPLATE_DL_DIR         = .tmp_template_dl
-
-EISVOGEL_TEMPLATE       = eisvogel.tex
-EISVOGEL_REPO           = https://github.com/Wandmalfarbe/pandoc-latex-template
-EISVOGEL_VERSION        = ad404d0446
-
-TEMPLATE_FILES          = $(EISVOGEL_TEMPLATE)
-
-
 
 
 
@@ -131,29 +116,26 @@ simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel: TEMPLATE_FILE    += $(EISVOGEL_TEMPLATE)
-eisvogel: TEMPLATE_REPO    += $(EISVOGEL_REPO)
-eisvogel: TEMPLATE_VERSION += $(EISVOGEL_VERSION)
-eisvogel: AUX_OPTS         += -M eisvogel=true
-eisvogel: OPTIONS          += --template=$(EISVOGEL_TEMPLATE) $(AUX_OPTS)
-eisvogel: OPTIONS          += -V float-placement-figure=htbp
-eisvogel: OPTIONS          += -V listings-no-page-break=true
-eisvogel: $(EISVOGEL_TEMPLATE) $(TARGET)
+eisvogel: AUX_OPTS     += -M eisvogel=true
+eisvogel: OPTIONS      += --template eisvogel $(AUX_OPTS)
+eisvogel: OPTIONS      += -V float-placement-figure=htbp
+eisvogel: OPTIONS      += -V listings-no-page-break=true
+eisvogel: $(TARGET)
 
 
 ## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
 docker:
-	cd docker && make
+	docker pull pandoc/extra:latest-ubuntu
 
 
 ## Clean-up: Remove temporary (generated) files and download folder
 clean:
-	rm -rf $(TMP) $(TEMPLATE_DL_DIR)
+	rm -rf $(TMP)
 
 
 ## Clean-up: Remove also generated thesis and template files
 distclean: clean
-	rm -f $(TARGET) $(TEMPLATE_FILES)
+	rm -f $(TARGET)
 
 
 
@@ -162,15 +144,6 @@ distclean: clean
 ###############################################################################
 ## Auxiliary targets (do not change)
 ###############################################################################
-
-
-## Download template files
-$(TEMPLATE_FILES):
-	rm -rf $(TEMPLATE_DL_DIR)
-	git clone --quiet --single-branch --branch master --depth 100 $(TEMPLATE_REPO) $(TEMPLATE_DL_DIR)
-	cd $(TEMPLATE_DL_DIR) && git checkout --quiet $(TEMPLATE_VERSION)
-	cp $(TEMPLATE_DL_DIR)/$(TEMPLATE_FILE) ./$(TEMPLATE_FILE)
-	rm -rf $(TEMPLATE_DL_DIR)
 
 
 ## Build thesis

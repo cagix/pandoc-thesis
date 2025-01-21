@@ -5,36 +5,24 @@ A Template for Thesis Documents written in Markdown.
 
 ## Installation
 
-### Docker (recommended)
+### Docker
 
-1.  Install docker from <https://hub.docker.com/search/?type=edition&offering=community>
-2.  Build docker image containing all dependencies, e.g. pandoc and TeX Live: `make docker`
+1.  Install docker from <https://www.docker.com/>
+2.  Fetch the [`pandoc/extra`](https://hub.docker.com/r/pandoc/extra/) docker image containing all
+    dependencies, e.g. pandoc and TeX Live: `make docker` or `docker pull pandoc/extra:latest-ubuntu`
 
-**Note**: You will need about 2GB of free disk space:
+**Note**: You will need about 1.5GB of free disk space:
+
 ```
 $ docker image ls
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-pandoc-thesis       latest              b8680fd61337        10 seconds ago      2GB
-debian              stable-slim         eb8569e750e6        5 days ago          69.2MB
+REPOSITORY       TAG             IMAGE ID       CREATED       SIZE
+pandoc/extra     latest-ubuntu   4be5559759ed   6 weeks ago   1.27GB
 ```
-
-### Alternative Route
-
-1.  Install pandoc from <https://pandoc.org/>
-2.  You also need to install LaTeX, e.g. from <https://www.tug.org/texlive/>
-3.  Install packages needed by pandoc: <https://pandoc.org/MANUAL.html#creating-a-pdf>
-4.  Either set an environment variable `PANDOC` pointing to the location of your pandoc installation or change the
-    line `PANDOC      ?= docker run --rm -v $(WORKDIR):/pandoc pandoc-thesis pandoc` in the [`Makefile`](Makefile) to
-    reflect your settings
 
 ### Additional Templates
 
-For using the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template), download the latest
-version of the template [`eisvogel.tex`](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/master/eisvogel.tex)
-and move it to the project folder
-(**Note**: Latest tested commit is [`ad404d0446` (version 2.0.0)](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/ad404d04461ecf92772e3f4defac2d649092b4ce/eisvogel.tex).)
-
-**Note**: If the template files do not yet exist in the project folder, use `make eisvogel` to download them.
+A fairly up-to-date version of the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template)
+is already included in `pandoc/extra`. It no longer needs to be downloaded and installed separately.
 
 
 ## Usage Example
@@ -71,9 +59,6 @@ this may produce an empty left page at the end of a chapter.
 
 **Note**: *When switching between templates, please make sure to `make clean` first! Failing to do so may lead to strange behaviour
 or even to weird errors.*
-
-**Note**: In rare circumstances, e.g. when using Cygwin, the path to the working directory is not correctly recognized by `make`.
-In this case, set it manually by overwriting the variable `WORKDIR` in the [`Makefile`](Makefile) (use absolute paths).
 
 
 ## Preview
