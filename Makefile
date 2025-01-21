@@ -4,16 +4,11 @@
 ###############################################################################
 
 
-## Working directory
-## In case this doesn't work, set the path manually (use absolute paths).
-WORKDIR                 = $(CURDIR)
-
-
 ## Pandoc
 ## (Defaults to docker. To use pandoc and TeX-Live directly, create an
 ## environment variable `PANDOC` pointing to the location of your
 ## pandoc installation.)
-PANDOC                 ?= docker run --rm --volume "$(WORKDIR):/pandoc" --workdir /pandoc --user `id -u`:`id -g` pandoc/extra:latest-ubuntu
+PANDOC                 ?= docker run --rm --volume "`pwd`:/data" --workdir /data --user `id -u`:`id -g` pandoc/extra:latest-ubuntu
 
 
 ## Source files
