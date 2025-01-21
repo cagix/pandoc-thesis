@@ -1,0 +1,22 @@
+name: Build using the simple template
+
+on:
+  # push on master branch
+  push:
+    branches: [master]
+  # triggered manually
+  workflow_dispatch:
+  # triggered by pull requests
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make simple
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thesis_simple
+          path: thesis.pdf
+          overwrite: true
