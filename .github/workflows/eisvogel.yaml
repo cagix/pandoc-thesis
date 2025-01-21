@@ -1,4 +1,4 @@
-name: BUILD
+name: Build using the Eisvogel template
 
 on:
   # push on master branch
