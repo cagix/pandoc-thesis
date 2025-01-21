@@ -116,10 +116,10 @@ simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel: AUX_OPTS         += -M eisvogel=true
-eisvogel: OPTIONS          += --template eisvogel $(AUX_OPTS)
-eisvogel: OPTIONS          += -V float-placement-figure=htbp
-eisvogel: OPTIONS          += -V listings-no-page-break=true
+eisvogel: AUX_OPTS     += -M eisvogel=true
+eisvogel: OPTIONS      += --template eisvogel $(AUX_OPTS)
+eisvogel: OPTIONS      += -V float-placement-figure=htbp
+eisvogel: OPTIONS      += -V listings-no-page-break=true
 eisvogel: $(TARGET)
 
 
