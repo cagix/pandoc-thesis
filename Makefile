@@ -115,11 +115,7 @@ EISVOGEL_TEMPLATE       = eisvogel.tex
 EISVOGEL_REPO           = https://github.com/Wandmalfarbe/pandoc-latex-template
 EISVOGEL_VERSION        = ad404d0446
 
-CLEANTHESIS_TEMPLATE    = cleanthesis.sty
-CLEANTHESIS_REPO        = https://github.com/derric/cleanthesis
-CLEANTHESIS_VERSION     = 63d1fdd815
-
-TEMPLATE_FILES          = $(EISVOGEL_TEMPLATE) $(CLEANTHESIS_TEMPLATE)
+TEMPLATE_FILES          = $(EISVOGEL_TEMPLATE)
 
 
 
@@ -143,15 +139,6 @@ eisvogel: OPTIONS          += --template=$(EISVOGEL_TEMPLATE) $(AUX_OPTS)
 eisvogel: OPTIONS          += -V float-placement-figure=htbp
 eisvogel: OPTIONS          += -V listings-no-page-break=true
 eisvogel: $(EISVOGEL_TEMPLATE) $(TARGET)
-
-
-## Use Clean Thesis template (https://github.com/derric/cleanthesis)
-cleanthesis: TEMPLATE_FILE    += $(CLEANTHESIS_TEMPLATE)
-cleanthesis: TEMPLATE_REPO    += $(CLEANTHESIS_REPO)
-cleanthesis: TEMPLATE_VERSION += $(CLEANTHESIS_VERSION)
-cleanthesis: AUX_OPTS         += -M cleanthesis=true -M cleanthesisbibfile=$(BIBFILE:%.bib=%)
-cleanthesis: OPTIONS          += --include-in-header=include-header.tex $(AUX_OPTS)
-cleanthesis: $(CLEANTHESIS_TEMPLATE) $(TARGET)
 
 
 ## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
@@ -204,4 +191,4 @@ $(TMP): __%.filled.tex: %.tex $(META)
 ###############################################################################
 
 
-.PHONY: simple eisvogel cleanthesis docker clean distclean
+.PHONY: simple eisvogel docker clean distclean

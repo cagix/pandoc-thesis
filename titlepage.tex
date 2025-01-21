@@ -78,18 +78,3 @@ $if(eisvogel)$
 \xapptocmd{\frontmatter}{\setcounter{page}{3}}{}{}
 $endif$
 %------------------------------------- Patch Eisvogel's frontmatter ----------------
-
-
-
-%------------------------------------- Workaround for CleanStyle -------------------
-%% cleanthesis.sty *will* check the bibfile, even if `configurebiblatex=false` ...
-%% So we need to set it appropriately using our metadata variable "cleanthesisbibfile"
-$if(cleanthesis)$
-\PassOptionsToPackage{
-    figuresep=colon,
-    configurelistings=true,
-    configurebiblatex=false,
-    bibfile=$cleanthesisbibfile$
-}{cleanthesis}
-$endif$
-%------------------------------------- Workaround for CleanStyle -------------------

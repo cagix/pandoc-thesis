@@ -29,16 +29,12 @@ debian              stable-slim         eb8569e750e6        5 days ago          
 
 ### Additional Templates
 
-*   Eisvogel: For using the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template), download the latest
-    version of the template [`eisvogel.tex`](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/master/eisvogel.tex)
-    and move it to the project folder
-    (**Note**: Latest tested commit is [`ad404d0446` (version 2.0.0)](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/ad404d04461ecf92772e3f4defac2d649092b4ce/eisvogel.tex).)
-*   Clean Thesis: For using the [Clean Thesis template](https://github.com/derric/cleanthesis), download the latest version
-    of the template [`cleanthesis.sty`](https://github.com/derric/cleanthesis/blob/master/cleanthesis.sty) and move it to the
-    project folder
-    (**Note**: Latest tested commit is [`63d1fdd815`](https://github.com/derric/cleanthesis/blob/63d1fdd815e3f78fd1cb64c58f8a9a1c28cad57c/cleanthesis.sty).)
+For using the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template), download the latest
+version of the template [`eisvogel.tex`](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/master/eisvogel.tex)
+and move it to the project folder
+(**Note**: Latest tested commit is [`ad404d0446` (version 2.0.0)](https://github.com/Wandmalfarbe/pandoc-latex-template/blob/ad404d04461ecf92772e3f4defac2d649092b4ce/eisvogel.tex).)
 
-**Note**: If the template files do not yet exist in the project folder, use `make eisvogel` or `make cleanthesis` to download them.
+**Note**: If the template files do not yet exist in the project folder, use `make eisvogel` to download them.
 
 
 ## Usage Example
@@ -63,7 +59,6 @@ debian              stable-slim         eb8569e750e6        5 days ago          
 6.  Build the thesis:
     *   Using the simple layout: `make simple`
     *   Using Eisvogel: `make eisvogel`
-    *   Using Clean Thesis: `make cleanthesis`
 7.  Clean up:
     *   To remove temporary (generated) filed: `make clean`
     *   To also remove the generated thesis (PDF): `make distclean`
@@ -94,12 +89,6 @@ In this case, set it manually by overwriting the variable `WORKDIR` in the [`Mak
 | Eisvogel Titlepage                                                                                            | Eisvogel Chapter                                                                                          |
 |---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | [![Eisvogel Titlepage](examples/thesis_example_eisvogel_titlepage.png)](examples/thesis_example_eisvogel.pdf) | [![Eisvogel Chapter](examples/thesis_example_eisvogel_chapter.png)](examples/thesis_example_eisvogel.pdf) |
-
-### Example using *Clean Thesis* Template
-
-| Clean Thesis Titlepage                                                                                                  | Clean Thesis Chapter                                                                                                |
-|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| [![Clean Thesis Titlepage](examples/thesis_example_cleanthesis_titlepage.png)](examples/thesis_example_cleanthesis.pdf) | [![Clean Thesis Chapter](examples/thesis_example_cleanthesis_chapter.png)](examples/thesis_example_cleanthesis.pdf) |
 
 
 

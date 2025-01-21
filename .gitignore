@@ -253,7 +253,6 @@ tmp/
 
 # Template files
 eisvogel.tex
-cleanthesis.sty
 
 # Generated PDF artifact
 thesis.pdf
