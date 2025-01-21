@@ -12,7 +12,11 @@ on:
 jobs:
   compile:
     runs-on: ubuntu-latest
-#    container: pandoc/extra:latest-ubuntu
     steps:
       - uses: actions/checkout@v4
       - run: make eisvogel
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thesis_eisvogel.pdf
+          path: thesis.pdf
+          overwrite: true
