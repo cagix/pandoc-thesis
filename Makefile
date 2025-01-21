@@ -13,7 +13,7 @@ WORKDIR                 = $(CURDIR)
 ## (Defaults to docker. To use pandoc and TeX-Live directly, create an
 ## environment variable `PANDOC` pointing to the location of your
 ## pandoc installation.)
-PANDOC                 ?= docker run --rm -v "$(WORKDIR):/pandoc" -w /pandoc pandoc-thesis pandoc
+PANDOC                 ?= docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/extra:latest-ubuntu
 
 
 ## Source files
@@ -131,14 +131,11 @@ simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel: TEMPLATE_FILE    += $(EISVOGEL_TEMPLATE)
-eisvogel: TEMPLATE_REPO    += $(EISVOGEL_REPO)
-eisvogel: TEMPLATE_VERSION += $(EISVOGEL_VERSION)
 eisvogel: AUX_OPTS         += -M eisvogel=true
-eisvogel: OPTIONS          += --template=$(EISVOGEL_TEMPLATE) $(AUX_OPTS)
+eisvogel: OPTIONS          += --template=eisvogel $(AUX_OPTS)
 eisvogel: OPTIONS          += -V float-placement-figure=htbp
 eisvogel: OPTIONS          += -V listings-no-page-break=true
-eisvogel: $(EISVOGEL_TEMPLATE) $(TARGET)
+eisvogel: $(TARGET)
 
 
 ## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
