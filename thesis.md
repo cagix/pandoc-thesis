@@ -64,7 +64,6 @@ declaration: |
 
 # Einleitung
 
-<!--
 *   Worum geht es hier? Was ist das betrachtete Problem bzw. die Fragestellung der Arbeit?
 *   Darstellung der Bedeutung und Relevanz: Warum sollte die Fragestellung bearbeitet werden?
 *   Einordnung in den Kontext
@@ -72,7 +71,6 @@ declaration: |
 *   Zielsetzung: Möglichst genaue Beschreibung der Ziele der Arbeit, etwa erwarteter Nutzen oder wissenschaftlicher Beitrag
 
 Umfang: typisch ca. 8% ... 10% der Arbeit
--->
 
 
 ## Markdown und -Erweiterungen durch Pandoc
@@ -184,14 +182,10 @@ Seite erzeugt wird. Dies ist durchaus beabsichtigt.
 
 # Stand der Technik/Forschung, vergleichbare Arbeiten
 
-<!--
 *   Darstellung relevanter Ansätze aus der Praxis bzw. Forschung
 *   Einordnung und Bewertung der Konzepte und Lösungen in Bezug auf die Ziele der Arbeit
 
 Umfang: typisch ca. 15% ... 20% der Arbeit
--->
-
-Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 
@@ -199,15 +193,11 @@ Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incid
 
 # Eigene Ideen, Konzepte, Methoden
 
-<!--
 *   Darstellung der eigenen Ideen und Konzepte zur Lösung der Fragestellung
 *   Vergleich mit bekannten Lösungen: Worin unterscheiden sich die eigenen Ansätze von den bekannten? Wo liegen mögliche Vor- oder Nachteile?
 *   Wie soll das Konzept umgesetzt werden? Beschreibung der zur Umsetzung eingesetzten Methoden
 
 Umfang: typisch ca. 20% ... 30% der Arbeit
--->
-
-Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 
@@ -215,16 +205,12 @@ Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incid
 
 # Realisierung, Evaluation
 
-<!--
 *   Beschreibung der Umsetzung des Lösungskonzepts
 *   Darstellung der aufgetretenen Probleme sowie deren Lösung bzw. daraus resultierende Einschränkungen des Ergebnisses (falls keine Lösung)
 *   Auswertung und Interpretation der Ergebnisse
 *   Vergleich mit der ursprünglichen Zielsetzung (ausführlich): Was wurde erreicht, was nicht (und warum)? (inkl. Begründung/Nachweis)
 
 Umfang: typisch ca. 30% ... 40% der Arbeit
--->
-
-Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 
@@ -232,12 +218,11 @@ Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incid
 
 # Zusammenfassung
 
-<!--
 *   Fazit: Vergleich mit der ursprünglichen Zielsetzung (komprimiert/zusammengefasst)
 *   Ausblick: Darstellung ungelöster Probleme und weiterer relevanter Ideen
 
 Umfang: typisch ca. 5% ... 10% der Arbeit
--->
+
 
 ## Fazit
 
@@ -275,12 +260,11 @@ References are automatically generated from the BibTex file (references.bib)
 
 # Appendix 1: Some extra stuff
 
-<!--
 Platz für *wichtige* Materialien, die zu umfangreich für den eigentlichen Textteil sind.
 
 Der Anhang gehört *nicht* zum Textteil (wird nicht zum Seitenumfang hinzugerechnet).
 Der Umfang des Anhangs sollte möglichst klein sein!
--->
+
 
 ## Bilder
 

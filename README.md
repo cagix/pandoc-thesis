@@ -47,8 +47,8 @@ It no longer needs to be downloaded and installed separately.
     just use this as starting point for your work ...
 
     *Hint*: You will find some help regarding the use of Markdown in the first chapter of
-    [`thesis.md`] as well as typical number of pages for each chapter in the comment section
-    of each file.
+    [`thesis.md`] as well as typical number of pages for each chapter in the beginning of
+    each chapter.
 
 5.  Pandoc uses per default the *Chicago Manual of Style* for citations
     (cf. [pandoc.org/MANUAL.html#citations]).
