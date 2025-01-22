@@ -2,7 +2,7 @@
 
 # Pandoc Thesis Template
 
-A Template for Thesis Documents written in Markdown.
+A template for thesis documents written in Markdown.
 
 ## Installation
 
@@ -26,33 +26,45 @@ It no longer needs to be downloaded and installed separately.
 ## Usage Example
 
 1.  Maintain your references in [`references.bib`]
-2.  Put the title of your thesis, your name and other meta information in [`md/metadata.yaml`]
-3.  Adjust optional definitions in [`md/metadata.yaml`] to your needs:
+
+2.  Put the title of your thesis, your name and other meta information into the YAML header of
+    [`thesis.md`]
+
+3.  Adjust optional definitions in the YAML header of [`thesis.md`] to your needs:
+
     -   Disable extras like `abstract-*` or `acknowledgements` or `restrictionnote`: Remove or
         comment this optional definitions
     -   Modify content (text) of optional definitions like `abstract-*` or `acknowledgements`
         or `restrictionnote`
     -   If you like Eisvogel but want a more useful`^W`conventional page header
-        (i.e. chapter/section instead of the thesis title) activate (i.e. remove comment in
-        front of) `headeralternative`
-4.  Fill the markdown files under [`md/`] with your content
-    -   The default files in the folder [`md/`] correspond to a typical structure of a
-        scientific thesis (see also `@Balzert2017`: *Balzert et al.* "Wissenschaftliches
-        Arbeiten", Springer, 2017). You can just use this as starting point for your work ...
-        *Hint*: You will find some help regarding the use of Markdown in
-        [`md/introduction.md`] as well as typical number of pages for each chapter in the
-        comment section of each file.
-    -   In case you see need for an other layout, please do not forget to reflect the changed
-        filenames in [`Makefile`].
+        (i.e. chapter/section instead of the thesis title) activate (i.e. remove the comment
+        mark in front of) `headeralternative`
+
+4.  Put your content into the markdown file [`thesis.md`]
+
+    The default chapters correspond to a typical structure of a scientific thesis (see also
+    `@Balzert2017`: *Balzert et al.* "Wissenschaftliches Arbeiten", Springer, 2017). You can
+    just use this as starting point for your work ...
+
+    *Hint*: You will find some help regarding the use of Markdown in the first chapter of
+    [`thesis.md`] as well as typical number of pages for each chapter in the comment section
+    of each file.
+
 5.  Pandoc uses per default the *Chicago Manual of Style* for citations
-    (cf. [pandoc.org/MANUAL.html#citations]). You can search [zotero.org/styles] or
-    [editor.citationstyles.org/searchByName] for alternative style definitions, download the
-    corresponding `.csl` file to your project folder and activate the style in the
-    [`Makefile`] (option `--csl=XXX.csl`).
+    (cf. [pandoc.org/MANUAL.html#citations]).
+
+    You can search [zotero.org/styles] or [editor.citationstyles.org/searchByName] for
+    alternative style definitions, download the corresponding `.csl` file to your project
+    folder and activate the style in the corresponding default file, i.e. [`eisvogel.yaml`] or
+    [`simple.yaml`] (option `csl: XXX.csl` at the bottom of the file).
+
 6.  Build the thesis:
+
     -   Using the simple layout: `make simple`
     -   Using Eisvogel: `make eisvogel`
+
 7.  Clean up:
+
     -   To remove temporary (generated) filed: `make clean`
     -   To also remove the generated thesis (PDF): `make distclean`
 
@@ -89,13 +101,12 @@ This work by [Carsten Gips] and [contributors] is licensed under [MIT].
   [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
   [Eisvogel template]: https://github.com/Wandmalfarbe/pandoc-latex-template
   [`references.bib`]: references.bib
-  [`md/metadata.yaml`]: md/metadata.yaml
-  [`md/`]: md
-  [`md/introduction.md`]: md/introduction.md
-  [`Makefile`]: Makefile
+  [`thesis.md`]: thesis.md
   [pandoc.org/MANUAL.html#citations]: https://pandoc.org/MANUAL.html#citations
   [zotero.org/styles]: https://www.zotero.org/styles
   [editor.citationstyles.org/searchByName]: https://editor.citationstyles.org/searchByName/
+  [`eisvogel.yaml`]: ./eisvogel.yaml
+  [`simple.yaml`]: ./simple.yaml
   [Simple Titlepage]: examples/thesis_example_simple_titlepage.png
   [1]: examples/thesis_example_simple.pdf
   [Simple Chapter]: examples/thesis_example_simple_chapter.png

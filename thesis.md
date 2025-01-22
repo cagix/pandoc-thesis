@@ -82,7 +82,7 @@ Für eine Einführung in (Pandoc-) Markdown vgl. [pandoc.org/MANUAL.html](https:
 Da als Backend \LaTeX{} zum Einsatz kommt, können alle entsprechenden Befehle und Umgebungen ebenfalls
 genutzt werden (ggf. muss noch das jeweilige Paket importiert werden).
 
-**Tipp**: Für eine schnelle Übersicht einfach den Quelltext ansehen (`./md/introduction.md`).
+**Tipp**: Für eine schnelle Übersicht einfach den Quelltext dieser Datei ansehen ([thesis.md](./thesis.md)).
 
 
 ## Zitieren
@@ -159,7 +159,7 @@ bar & bar & bar & bar \tabularnewline
 
 Querverweise funktionieren in Markdown leider nicht so richtig wie von \LaTeX{} gewohnt.
 
-Hier kann aber einfach auf die ensprechenden \LaTeX{}-Pendants ausgewichen werden:
+Hier kann aber einfach auf die entsprechenden \LaTeX{}-Pendants ausgewichen werden:
 
 *   Definieren einer Referenz mit `\label{<id>}`{.latex} (beispielsweise in den jeweiligen Unterschriften
     unter einer Abbildung/Tabelle/Code-Schnipsel), und
