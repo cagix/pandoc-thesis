@@ -4,9 +4,9 @@
 ###############################################################################
 
 
-## Working directory
+## Working directory and User
 ## In case this doesn't work, set the path manually (use absolute paths).
-WORKDIR                 = $(shell pwd)
+WORKDIR                 = .
 USRID                   = $(shell id -u)
 GRPID                   = $(shell id -g)
 
