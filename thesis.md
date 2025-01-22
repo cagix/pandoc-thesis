@@ -244,9 +244,9 @@ References are automatically generated from the BibTex file (references.bib)
 ... which you should create/maintain using a reference manager.
 -->
 
-# Literatur {.unnumbered}
+# Quellen {.unnumbered}
 
-\markboth{Literatur}{Literatur}
+\markboth{Quellen}{Quellen}
 
 ::: {#refs}
 :::
