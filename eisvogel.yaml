@@ -1,0 +1,68 @@
+## Options for Eisvogel template
+## (see https://pandoc.org/MANUAL.html#defaults-files)
+## (see https://github.com/Wandmalfarbe/pandoc-latex-template)
+
+## general options
+from: markdown+lists_without_preceding_blankline
+to: pdf
+
+
+## reader options
+metadata:
+  lang: de-DE
+metadata-file: md/metadata.yaml
+
+
+## general writer options
+template: eisvogel
+
+variables:
+  documentclass: scrbook
+  papersize: a4
+  fontsize: 11pt
+  book: true
+  titlepage: true
+  toc-own-page: true
+  link-citations: true
+  colorlinks: true
+  classoption:
+    - open=right
+    - twoside=true
+    - cleardoublepage=empty
+    - clearpage=empty
+  geometry:
+    - top=30mm
+    - left=25mm
+    - bottom=30mm
+    - width=150mm
+    - bindingoffset=6mm
+  float-placement-figure: htbp
+  listings-no-page-break: true
+
+toc: true
+toc-depth: 3
+
+include-in-header:
+  - __titlepage.filled.tex
+
+include-before-body:
+  - __frontmatter.filled.tex
+
+include-after-body:
+  - __backmatter.filled.tex
+
+
+## options for specific writer
+number-sections: true
+
+listings: true
+
+pdf-engine: pdflatex
+pdf-engine-opt: '-shell-escape'
+
+
+## citation rendering
+citeproc: true
+bibliography: references.bib
+#csl: https://www.zotero.org/styles/springer-lecture-notes-in-computer-science
+#csl: https://www.zotero.org/styles/springer-basic-author-date
