@@ -8,9 +8,6 @@ to: pdf
 
 
 ## reader options
-metadata:
-  lang: de-DE
-metadata-file: md/metadata.yaml
 
 
 ## general writer options

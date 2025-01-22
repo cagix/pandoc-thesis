@@ -20,18 +20,8 @@ PANDOC                 ?= docker run --rm --volume "$(WORKDIR):/data" --workdir 
 
 ## Source files
 ## (Adjust to your needs. Order of markdown files in $(SRC) matters!)
-META                    = md/metadata.yaml
-
-SRC                     = md/introduction.md       \
-                          md/relatedwork.md        \
-                          md/concept.md            \
-                          md/realisation.md        \
-                          md/conclusion.md
-
+SRC                     = thesis.md
 BIBFILE                 = references.bib
-
-APPENDIX                = md/appendix.md
-
 TARGET                  = thesis.pdf
 
 
@@ -48,7 +38,6 @@ TARGET                  = thesis.pdf
 TITLEPAGE               = titlepage.tex
 FRONTMATTER             = frontmatter.tex
 BACKMATTER              = backmatter.tex
-REFERENCES              = references.md
 
 TMP1                    = $(TITLEPAGE:%.tex=__%.filled.tex)
 TMP2                    = $(FRONTMATTER:%.tex=__%.filled.tex)
@@ -103,13 +92,13 @@ distclean: clean
 
 
 ## Build thesis
-${TARGET}: $(SRC) $(REFERENCES) $(APPENDIX) $(META) $(BIBFILE) $(TMP)
-	$(PANDOC) ${OPTIONS} -o $@ $(SRC) $(REFERENCES) $(APPENDIX)
+${TARGET}: $(SRC) $(BIBFILE) $(TMP)
+	$(PANDOC) ${OPTIONS} $(SRC) -o $@
 
 
 ## Build auxiliary files (title page, frontmatter, backmatter, references)
-$(TMP): __%.filled.tex: %.tex $(META)
-	$(PANDOC) $(AUX_OPTS) --template=$< --metadata-file=$(META) -o $@ $<
+$(TMP): __%.filled.tex: %.tex $(SRC)
+	$(PANDOC) $(AUX_OPTS) --template=$< $(SRC) -o $@
 
 
 
