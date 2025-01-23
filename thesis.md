@@ -51,7 +51,7 @@ restrictionnote: |
 declaration: |
   Ich erkläre hiermit an Eides Statt, dass ich die vorliegende Arbeit selbstständig
   angefertigt habe. Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken
-  sind als entsprechend kenntlich gemacht.
+  sind entsprechend kenntlich gemacht.
 
   Ich habe die Arbeit bisher weder in gleicher noch in ähnlicher Form einer anderen
   Prüfungsbehörde vorgelegt und auch noch nicht veröffentlicht. Das PDF-Exemplar stimmt
