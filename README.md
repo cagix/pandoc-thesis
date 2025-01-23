@@ -47,8 +47,8 @@ It no longer needs to be downloaded and installed separately.
     just use this as starting point for your work ...
 
     *Hint*: You will find some help regarding the use of Markdown in the first chapter of
-    [`thesis.md`] as well as typical number of pages for each chapter in the beginning of
-    each chapter.
+    [`thesis.md`] as well as typical number of pages for each chapter in the beginning of each
+    chapter.
 
 5.  Pandoc uses per default the *Chicago Manual of Style* for citations
     (cf. [pandoc.org/MANUAL.html#citations]).
@@ -75,8 +75,8 @@ The generated PDF is intended to be printed **double sided** like a book. Also, 
 always on a new (right) page, i.e. this may produce an empty left page at the end of a
 chapter.
 
-**Note**: *When switching between templates, please make sure to `make clean` first! Failing
-to do so may lead to strange behaviour or even to weird errors.*
+> [!WARNING] When switching between templates, please make sure to `make clean` first!
+> Failing to do so may lead to strange behaviour or even to weird errors.
 
 ## Preview
 
