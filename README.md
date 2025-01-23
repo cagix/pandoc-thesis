@@ -71,9 +71,9 @@ It no longer needs to be downloaded and installed separately.
 The above mentioned files constitute a minimal working example. To start your own project,
 simply clone this project and customize the files mentioned above.
 
-The generated PDF is intended to be printed **double sided** like a book. Also, chapters start
-always on a new (right) page, i.e. this may produce an empty left page at the end of a
-chapter.
+> [!NOTE] The generated PDF is intended to be printed **double sided** like a book. Also,
+> chapters start always on a new (right) page, i.e. this may produce an empty left page at the
+> end of a chapter.
 
 > [!WARNING] When switching between templates, please make sure to `make clean` first!
 > Failing to do so may lead to strange behaviour or even to weird errors.
