@@ -27,6 +27,9 @@ It no longer needs to be downloaded and installed separately.
 
 1.  Maintain your references in [`references.bib`]
 
+    Many reference management programs offer Bibtex export. One example is [JabRef], which
+    allows you to edit your Bibtex file directly.
+
 2.  Put the title of your thesis, your name and other meta information into the YAML header of
     [`thesis.md`]
 
@@ -123,6 +126,7 @@ This work by [Carsten Gips] and [contributors] is licensed under [MIT].
   [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
   [Eisvogel template]: https://github.com/Wandmalfarbe/pandoc-latex-template
   [`references.bib`]: references.bib
+  [JabRef]: https://www.jabref.org/
   [`thesis.md`]: thesis.md
   [pandoc.org/MANUAL.html#citations]: https://pandoc.org/MANUAL.html#citations
   [zotero.org/styles]: https://www.zotero.org/styles
