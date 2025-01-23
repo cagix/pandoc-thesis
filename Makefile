@@ -19,7 +19,7 @@ PANDOC                 ?= docker run --rm --volume "$(WORKDIR):/data" --workdir 
 
 
 ## Source files
-## (Adjust to your needs. Order of markdown files in $(SRC) matters!)
+## (Adjust to your needs.)
 SRC                     = thesis.md
 BIBFILE                 = references.bib
 TARGET                  = thesis.pdf
@@ -35,13 +35,14 @@ TARGET                  = thesis.pdf
 
 ## Auxiliary files
 ## (Do not change!)
-TITLEPAGE               = titlepage.tex
-FRONTMATTER             = frontmatter.tex
-BACKMATTER              = backmatter.tex
+DATA                    = .pandoc
+TITLEPAGE               = $(DATA)/titlepage.tex
+FRONTMATTER             = $(DATA)/frontmatter.tex
+BACKMATTER              = $(DATA)/backmatter.tex
 
-TMP1                    = $(TITLEPAGE:%.tex=__%.filled.tex)
-TMP2                    = $(FRONTMATTER:%.tex=__%.filled.tex)
-TMP3                    = $(BACKMATTER:%.tex=__%.filled.tex)
+TMP1                    = $(TITLEPAGE:$(DATA)/%.tex=__%.filled.tex)
+TMP2                    = $(FRONTMATTER:$(DATA)/%.tex=__%.filled.tex)
+TMP3                    = $(BACKMATTER:$(DATA)/%.tex=__%.filled.tex)
 TMP                     = $(TMP1) $(TMP2) $(TMP3)
 
 
@@ -97,7 +98,7 @@ ${TARGET}: $(SRC) $(BIBFILE) $(TMP)
 
 
 ## Build auxiliary files (title page, frontmatter, backmatter, references)
-$(TMP): __%.filled.tex: %.tex $(SRC)
+$(TMP): __%.filled.tex: $(DATA)/%.tex $(SRC)
 	$(PANDOC) $(AUX_OPTS) --template=$< $(SRC) -o $@
 
 
