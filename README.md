@@ -91,6 +91,15 @@ simply clone this project and customize the files mentioned above.
 > -   `make simple` or `make eisvogel` to build the thesis
 > -   Success!
 
+## Submitting your thesis
+
+HSBI students submit their work as a PDF using the upload form at
+https://www.hsbi.de/hochschule/schriftliche-arbeiten.
+
+A declaration of originality must also be submitted. The form can be found at
+["Eigenständigkeitserklärung"] and must be completed, signed and uploaded together with the
+thesis PDF.
+
 ## Preview
 
 ### Example using *Simple* Layout
@@ -120,6 +129,7 @@ This work by [Carsten Gips] and [contributors] is licensed under [MIT].
   [editor.citationstyles.org/searchByName]: https://editor.citationstyles.org/searchByName/
   [`eisvogel.yaml`]: ./eisvogel.yaml
   [`simple.yaml`]: ./simple.yaml
+  ["Eigenständigkeitserklärung"]: https://www.hsbi.de/media/hochschulverwaltung/dezernat-ii/studserv/pruefungsangelegenheiten/hochschulweite-ordnungen-formulare-und-antraege/eigenstaendigkeitserklaerung
   [Simple Titlepage]: examples/thesis_example_simple_titlepage.png
   [1]: examples/thesis_example_simple.pdf
   [Simple Chapter]: examples/thesis_example_simple_chapter.png
