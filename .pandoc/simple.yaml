@@ -7,6 +7,8 @@ to: pdf
 
 
 ## reader options
+metadata:
+  link-citations: true
 
 
 ## general writer options
@@ -17,7 +19,6 @@ variables:
   book: true
   titlepage: true
   toc-own-page: true
-  link-citations: true
   colorlinks: true
   classoption:
     - open=right
