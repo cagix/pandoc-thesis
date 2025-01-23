@@ -36,14 +36,8 @@ TARGET                  = thesis.pdf
 ## Auxiliary files
 ## (Do not change!)
 DATA                    = .pandoc
-TITLEPAGE               = $(DATA)/titlepage.tex
-FRONTMATTER             = $(DATA)/frontmatter.tex
-BACKMATTER              = $(DATA)/backmatter.tex
-
-TMP1                    = $(TITLEPAGE:$(DATA)/%.tex=__%.filled.tex)
-TMP2                    = $(FRONTMATTER:$(DATA)/%.tex=__%.filled.tex)
-TMP3                    = $(BACKMATTER:$(DATA)/%.tex=__%.filled.tex)
-TMP                     = $(TMP1) $(TMP2) $(TMP3)
+TEMPLATES               = $(DATA)/titlepage.tex  $(DATA)/frontmatter.tex  $(DATA)/backmatter.tex
+INCLUDES                = $(TEMPLATES:$(DATA)/%.tex=__%.filled.tex)
 
 
 ## Pandoc options
@@ -76,7 +70,7 @@ docker:
 
 ## Clean-up: Remove temporary (generated) files and download folder
 clean:
-	rm -rf $(TMP)
+	rm -rf $(INCLUDES)
 
 
 ## Clean-up: Remove also generated thesis and template files
@@ -93,12 +87,12 @@ distclean: clean
 
 
 ## Build thesis
-${TARGET}: $(SRC) $(BIBFILE) $(TMP)
+${TARGET}: $(SRC) $(BIBFILE) $(INCLUDES)
 	$(PANDOC) ${OPTIONS} $(SRC) -o $@
 
 
 ## Build auxiliary files (title page, frontmatter, backmatter, references)
-$(TMP): __%.filled.tex: $(DATA)/%.tex $(SRC)
+$(INCLUDES): __%.filled.tex: $(DATA)/%.tex $(SRC)
 	$(PANDOC) $(AUX_OPTS) --template=$< $(SRC) -o $@
 
 
