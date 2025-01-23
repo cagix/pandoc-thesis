@@ -53,13 +53,13 @@ AUX_OPTS                = --wrap=preserve
 
 
 ## Simple book layout
-simple: OPTIONS         = --defaults=simple.yaml
+simple: OPTIONS         = --defaults=$(DATA)/simple.yaml
 simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
 eisvogel: AUX_OPTS     += -M eisvogel=true
-eisvogel: OPTIONS       = --defaults=eisvogel.yaml
+eisvogel: OPTIONS       = --defaults=$(DATA)/eisvogel.yaml
 eisvogel: $(TARGET)
 
 
