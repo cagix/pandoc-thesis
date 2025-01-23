@@ -80,6 +80,17 @@ simply clone this project and customize the files mentioned above.
 > When switching between templates, please make sure to `make clean` first! Failing to do so
 > may lead to strange behaviour or even to weird errors.
 
+> [!IMPORTANT]
+> Do not use Windows + Docker directly, but via WSL:
+>
+> -   Install WSL (see https://learn.microsoft.com/en-us/windows/wsl/install), any
+>     distribution will work
+> -   Start the subsystem to get access to its shell
+> -   `git clone https://github.com/cagix/pandoc-thesis.git` to pull the project
+> -   `make docker` to pull the `pandoc/extra` image
+> -   `make simple` or `make eisvogel` to build the thesis
+> -   Success!
+
 ## Preview
 
 ### Example using *Simple* Layout
