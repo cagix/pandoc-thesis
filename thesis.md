@@ -237,22 +237,24 @@ Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incid
 
 
 
-<!--
-Do not edit this section!
-
-References are automatically generated from the BibTex file (references.bib)
-... which you should create/maintain using a reference manager.
--->
+<!-- ==============  DO NOT EDIT THE SECTION BELOW  ============== -->
 
 # Quellen {.unnumbered}
 
 \markboth{Quellen}{Quellen}
+
+<!--
+References are automatically generated from the BibTex file (references.bib)
+... which you should create/maintain using a reference manager.
+-->
 
 ::: {#refs}
 :::
 
 
 \appendix
+
+<!-- ==============  DO NOT EDIT THE SECTION ABOVE  ============== -->
 
 
 
