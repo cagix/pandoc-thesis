@@ -43,8 +43,8 @@ It no longer needs to be downloaded and installed separately.
 4.  Put your content into the markdown file [`thesis.md`]
 
     The default chapters correspond to a typical structure of a scientific thesis (see also
-    `@Balzert2017`: *Balzert et al.* "Wissenschaftliches Arbeiten", Springer, 2017). You can
-    just use this as starting point for your work ...
+    `@Balzert2022`: *Balzert et al.* "Wissenschaftliches Arbeiten", 2022). You can just use
+    this as starting point for your work ...
 
     *Hint*: You will find some help regarding the use of Markdown in the first chapter of
     [`thesis.md`] as well as typical number of pages for each chapter in the beginning of each

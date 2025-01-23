@@ -79,6 +79,11 @@ restrictionnote: |
 Umfang: typisch ca. 8% ... 10% der Arbeit
 
 
+## Aufbau einer wissenschaftlichen Arbeit
+
+Bitte lesen Sie den online frei verfügbaren Text zum wissenschaftlichen Arbeiten von @Balzert2022 durch.
+
+
 ## Markdown und -Erweiterungen durch Pandoc
 
 Für eine Einführung in (Pandoc-) Markdown vgl. [pandoc.org/MANUAL.html](https://pandoc.org/MANUAL.html).
