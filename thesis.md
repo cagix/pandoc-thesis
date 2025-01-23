@@ -48,14 +48,20 @@ restrictionnote: |
 
 
 ## mandatory
-declaration: |
-  Ich erkläre hiermit an Eides Statt, dass ich die vorliegende Arbeit selbstständig
-  angefertigt habe. Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken
-  sind entsprechend kenntlich gemacht.
-
-  Ich habe die Arbeit bisher weder in gleicher noch in ähnlicher Form einer anderen
-  Prüfungsbehörde vorgelegt und auch noch nicht veröffentlicht. Das PDF-Exemplar stimmt
-  mit den eingereichten Exemplaren überein.
+##
+## HSBI students will need to submit the form provided by the university, which can be found at
+## https://www.hsbi.de/media/hochschulverwaltung/dezernat-ii/studserv/pruefungsangelegenheiten/hochschulweite-ordnungen-formulare-und-antraege/eigenstaendigkeitserklaerung.pdf
+##
+## All others can just uncomment the following section:
+##
+#declaration: |
+#  Ich erkläre hiermit an Eides Statt, dass ich die vorliegende Arbeit selbstständig
+#  angefertigt habe. Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken
+#  sind entsprechend kenntlich gemacht.
+#
+#  Ich habe die Arbeit bisher weder in gleicher noch in ähnlicher Form einer anderen
+#  Prüfungsbehörde vorgelegt und auch noch nicht veröffentlicht. Das PDF-Exemplar stimmt
+#  mit den eingereichten Exemplaren überein.
 ---
 
 
