@@ -13,29 +13,30 @@ metadata:
 
 
 ## general writer options
+## eivogel: https://github.com/Wandmalfarbe/pandoc-latex-template
+## (uses scrbook: https://ftp.tu-chemnitz.de/pub/tex/macros/latex/contrib/koma-script/doc/scrguide-de.pdf)
 template: eisvogel
 
 variables:
   documentclass: scrbook
+  book: true
   papersize: a4
   fontsize: 11pt
-  book: true
   titlepage: true
   toc-own-page: true
   colorlinks: true
+  float-placement-figure: htbp
+  listings-no-page-break: true
   classoption:
     - open=right
     - twoside=true
     - cleardoublepage=empty
-    - clearpage=empty
   geometry:
     - top=30mm
     - left=25mm
     - bottom=30mm
     - width=150mm
     - bindingoffset=6mm
-  float-placement-figure: htbp
-  listings-no-page-break: true
 
 toc: true
 toc-depth: 3

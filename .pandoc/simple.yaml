@@ -12,19 +12,17 @@ metadata:
 
 
 ## general writer options
+## scrbook: https://ftp.tu-chemnitz.de/pub/tex/macros/latex/contrib/koma-script/doc/scrguide-de.pdf
 variables:
   documentclass: scrbook
   papersize: a4
   fontsize: 11pt
-  book: true
   titlepage: true
-  toc-own-page: true
   colorlinks: true
   classoption:
     - open=right
     - twoside=true
     - cleardoublepage=empty
-    - clearpage=empty
   geometry:
     - top=30mm
     - left=25mm
