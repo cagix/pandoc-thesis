@@ -242,7 +242,8 @@ TSWLatexianTemp*
 *.spl
 
 # generated titlepage, frontmatter and backmatter
-__titlepage.filled.tex
+__titlepage_eisvogel.filled.tex
+__titlepage_simple.filled.tex
 __frontmatter.filled.tex
 __backmatter.filled.tex
 
