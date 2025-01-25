@@ -1,5 +1,30 @@
 
-%------------------------------------- Custom Title Page ---------------------------
+$if(eisvogel)$
+
+%------------------------------------- Eisvogel: Custom Title (Back) Page --------------------
+\newcommand\customtitlebackpage{
+\thispagestyle{empty}
+\hfill
+\vfill
+\textbf{$author$} ($studentnumber$) \\
+\textit{$title$} \\
+$date$ \\[12pt]
+Erstprüfer/in: $reviewer1$ \\
+Zweitprüfer/in: $reviewer2$
+}
+
+%% Eisvogel template uses `\frontmatter` directly *after* `\maketitle`, thus there is
+%% a `\doubleclearpage` after the titlepage, which prevents our title-back-page to be
+%% positioned on the backside of the titlepage ...
+%% (Pandocs default template uses `\frontmatter` *before* `\maketitle`)
+\usepackage{xpatch}
+\xpretocmd{\frontmatter}{\customtitlebackpage}{}{}
+\xapptocmd{\frontmatter}{\setcounter{page}{3}}{}{}
+%------------------------------------- Eisvogel: Custom Title (Back) Page --------------------
+
+$else$
+
+%------------------------------------- Simple: Custom Title Page -----------------------------
 \renewcommand{\maketitle}{
 \thispagestyle{empty}
 
@@ -48,33 +73,6 @@ $endif$
     Zweitprüfer/in: & \texttt{$reviewer2$}
 \end{tabular}
 }
-%------------------------------------- Custom Title Page ---------------------------
+%------------------------------------- Simple: Custom Title Page -----------------------------
 
-
-
-%------------------------------------- Custom Title (Back) Page --------------------
-\newcommand\customtitlebackpage{
-\thispagestyle{empty}
-\hfill
-\vfill
-\textbf{$author$} ($studentnumber$) \\
-\textit{$title$} \\
-$date$ \\[12pt]
-Erstprüfer/in: $reviewer1$ \\
-Zweitprüfer/in: $reviewer2$
-}
-%------------------------------------- Custom Title (Back) Page --------------------
-
-
-
-%------------------------------------- Patch Eisvogel's frontmatter ----------------
-%% Eisvogel template uses `\frontmatter` directly *after* `\maketitle`, thus there is
-%% a `\doubleclearpage` after the titlepage, which prevents our title-back-page to be
-%% positioned on the backside of the titlepage ...
-%% (Pandocs default template uses `\frontmatter` *before* `\maketitle`)
-$if(eisvogel)$
-\usepackage{xpatch}
-\xpretocmd{\frontmatter}{\customtitlebackpage}{}{}
-\xapptocmd{\frontmatter}{\setcounter{page}{3}}{}{}
 $endif$
-%------------------------------------- Patch Eisvogel's frontmatter ----------------
