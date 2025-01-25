@@ -181,13 +181,6 @@ bzw. [pandoc.org/lua-filters.html](https://pandoc.org/lua-filters.html)] einsetz
 [github.com/lierdakil/pandoc-crossref](https://github.com/lierdakil/pandoc-crossref).
 
 
-## Hinweise zum generierten PDF
-
-Das generierte PDF ist für den **doppelseitigen** Ausdruck gedacht. Wie bei einem Buch fangen neue Kapitel
-immer auf einer neuen rechten Seite an, d.h. es kann passieren, dass am Ende eines Kapitels ggf. eine leere
-Seite erzeugt wird. Dies ist durchaus beabsichtigt.
-
-
 
 
 

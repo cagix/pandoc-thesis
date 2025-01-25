@@ -20,8 +20,8 @@ variables:
   titlepage: true
   colorlinks: true
   classoption:
-    - open=right
-    - twoside=true
+    - twoside=false
+    - open=any
     - cleardoublepage=empty
   geometry:
     - top=30mm

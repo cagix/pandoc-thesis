@@ -28,8 +28,8 @@ variables:
   float-placement-figure: htbp
   listings-no-page-break: true
   classoption:
-    - open=right
-    - twoside=true
+    - twoside=false
+    - open=any
     - cleardoublepage=empty
   geometry:
     - top=30mm
