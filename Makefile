@@ -48,7 +48,7 @@ INCLUDES                = $(TEMPLATES:$(DATA)/%.tex=__%.filled.tex)
 ###############################################################################
 
 
-## Simple book layout
+## Simple book layout (https://ftp.tu-chemnitz.de/pub/tex/macros/latex/contrib/koma-script/doc/scrguide-de.pdf)
 simple: OPTIONS         = --defaults=$(DATA)/simple.yaml
 simple: $(TARGET)
 
