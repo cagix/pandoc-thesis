@@ -4,7 +4,7 @@ title: "Title of my Thesis"
 author: "Surname Name"
 
 studentnumber: "12345678"
-date: "20. Juli 2019"
+date: "20. Juli 2025"
 
 reviewer1:  "XXX, HSBI"
 reviewer2:  "XXX, Wuppie GmbH"
