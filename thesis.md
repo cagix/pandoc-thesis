@@ -13,13 +13,20 @@ keywords: [Markdown, Example]
 lang: de-DE
 
 
-### really long titles may require (multiple) line break(s) in page headers when using Eisvogel
-### activate (i.e. uncomment the next line) "header-left" to define a shortened single-line version of your long title to be used in page headers
-#header-left: "Shortened version of title for running page headers ..."
-### (note to myself: "header-left" is a meta-data variable in the Eisvogel template)
-
-### activate (i.e. uncomment the next line) "headeralternative" to use chapter/section in header instead of title
-headeralternative: true
+## The behaviour of headers and footers in Eisvogel is a bit ... unusual. The following
+## metadata variables change the format to the standard format. Please adjust as needed.
+##
+## When using Eisvogel, very long titles may require (multiple) line breaks in the page
+## headers. In this case, please define a shortened one-line version of your long title
+## to be used in the page headers.
+### Example: header-left: "Shortened version of title for running page headers ..."
+##
+header-left:   "\\hspace{1mm}"  # off
+header-center: "\\headmark"     # chapter name
+header-right:  "\\hspace{1mm}"  # off
+footer-left:   "\\hspace{1mm}"  # off
+footer-center: "\\pagemark"     # page number
+footer-right:  "\\hspace{1mm}"  # off
 
 
 ## optional (mandatory, if english abstract enabled)
