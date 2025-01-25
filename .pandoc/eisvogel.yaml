@@ -42,7 +42,7 @@ toc: true
 toc-depth: 3
 
 include-in-header:
-  - __titlepage.filled.tex
+  - __titlepage_eisvogel.filled.tex
 
 include-before-body:
   - __frontmatter.filled.tex

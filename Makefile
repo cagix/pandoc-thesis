@@ -36,12 +36,8 @@ TARGET                  = thesis.pdf
 ## Auxiliary files
 ## (Do not change!)
 DATA                    = .pandoc
-TEMPLATES               = $(DATA)/titlepage.tex  $(DATA)/frontmatter.tex  $(DATA)/backmatter.tex
+TEMPLATES               = $(DATA)/titlepage_eisvogel.tex  $(DATA)/titlepage_simple.tex  $(DATA)/frontmatter.tex  $(DATA)/backmatter.tex
 INCLUDES                = $(TEMPLATES:$(DATA)/%.tex=__%.filled.tex)
-
-
-## Pandoc options
-AUX_OPTS                = --wrap=preserve
 
 
 
@@ -58,7 +54,6 @@ simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel: AUX_OPTS     += -M eisvogel=true
 eisvogel: OPTIONS       = --defaults=$(DATA)/eisvogel.yaml
 eisvogel: $(TARGET)
 
@@ -93,7 +88,7 @@ ${TARGET}: $(SRC) $(BIBFILE) $(INCLUDES)
 
 ## Build auxiliary files (title page, frontmatter, backmatter, references)
 $(INCLUDES): __%.filled.tex: $(DATA)/%.tex $(SRC)
-	$(PANDOC) $(AUX_OPTS) --template=$< $(SRC) -o $@
+	$(PANDOC) --wrap=preserve --template=$< $(SRC) -o $@
 
 
 
