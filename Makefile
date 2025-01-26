@@ -6,9 +6,9 @@
 
 ## Working directory and User
 ## In case this doesn't work, set the path manually (use absolute paths).
-WORKDIR                 = .
-USRID                   = $(shell id -u)
-GRPID                   = $(shell id -g)
+WORKDIR                ?= .
+USRID                  ?= $(shell id -u)
+GRPID                  ?= $(shell id -g)
 
 
 ## Pandoc
@@ -20,9 +20,9 @@ PANDOC                 ?= docker run --rm --volume "$(WORKDIR):/data" --workdir 
 
 ## Source files
 ## (Adjust to your needs.)
-SRC                     = thesis.md
-BIBFILE                 = references.bib
-TARGET                  = thesis.pdf
+SRC                    ?= thesis.md
+BIBFILE                ?= references.bib
+TARGET                 ?= thesis.pdf
 
 
 
