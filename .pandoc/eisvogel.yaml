@@ -62,6 +62,5 @@ pdf-engine-opt: '-shell-escape'
 
 ## citation rendering
 citeproc: true
-bibliography: references.bib
 #csl: https://www.zotero.org/styles/springer-lecture-notes-in-computer-science
 #csl: https://www.zotero.org/styles/springer-basic-author-date

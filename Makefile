@@ -48,13 +48,17 @@ INCLUDES                = $(TEMPLATES:$(DATA)/%.tex=__%.filled.tex)
 ###############################################################################
 
 
+## Common options
+OPTIONS                 = --bibliography $(BIBFILE)
+
+
 ## Simple book layout (https://ftp.tu-chemnitz.de/pub/tex/macros/latex/contrib/koma-script/doc/scrguide-de.pdf)
-simple: OPTIONS         = --defaults=$(DATA)/simple.yaml
+simple: OPTIONS        += --defaults=$(DATA)/simple.yaml
 simple: $(TARGET)
 
 
 ## Use Eisvogel template (https://github.com/Wandmalfarbe/pandoc-latex-template)
-eisvogel: OPTIONS       = --defaults=$(DATA)/eisvogel.yaml
+eisvogel: OPTIONS      += --defaults=$(DATA)/eisvogel.yaml
 eisvogel: $(TARGET)
 
 
