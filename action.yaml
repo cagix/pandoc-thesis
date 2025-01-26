@@ -1,0 +1,39 @@
+name: 'Pandoc-Thesis'
+description: 'This action will run the Pandoc-Thesis toolchain from https://github.com/cagix/pandoc-thesis (Ubuntu runner only)'
+
+inputs:
+  srcfile:
+    description: 'Thesis document (MD)'
+    required: false
+    default: 'thesis.md'
+  targetfile:
+    description: 'Target file (PDF)'
+    required: false
+    default: 'thesis.pdf'
+  bibfile:
+    description: 'Bibtex file'
+    required: false
+    default: 'references.bib'
+  template:
+    description: 'Template to be used'
+    required: false
+    default: 'eisvogel'     # values: 'simple', 'eisvogel'
+
+runs:
+  using: "composite"
+  steps:
+    - name: 'Copy Makefile'
+      run: cp ${{ github.action_path }}/Makefile .
+      shell: bash
+
+    - name: 'Copy Templates'
+      run: cp -r ${{ github.action_path }}/.pandoc .
+      shell: bash
+
+    - name: 'Compile document'
+      run: make  ${{ inputs.template }}  SRC=${{ inputs.srcfile }}  TARGET=${{ inputs.targetfile }}  BIBFILE=${{ inputs.bibfile }}
+      shell: bash
+
+    - name: 'ls -lags'
+      run: ls -lags
+      shell: bash
