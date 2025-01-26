@@ -1,0 +1,52 @@
+name: Build using the GH action
+
+on:
+  # push on master branch
+  push:
+    branches: [master]
+  # triggered manually
+  workflow_dispatch:
+  # triggered by pull requests
+  pull_request:
+
+jobs:
+  action-defaults:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cagix/pandoc-thesis@master
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thesis_defaults_action
+          path: thesis.pdf
+          overwrite: true
+  action-eisvogel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cagix/pandoc-thesis@master
+        with:
+          srcfile: thesis.md
+          targetfile: thesis-eisvogel.pdf
+          bibfile: references.bib
+          template: eisvogel
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thesis_eisvogel_action
+          path: thesis-eisvogel.pdf
+          overwrite: true
+  action-simple:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cagix/pandoc-thesis@master
+        with:
+          srcfile: thesis.md
+          targetfile: thesis-simple.pdf
+          bibfile: references.bib
+          template: simple
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thesis_simple_action
+          path: thesis-simple.pdf
+          overwrite: true
