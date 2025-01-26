@@ -48,6 +48,10 @@ INCLUDES                = $(TEMPLATES:$(DATA)/%.tex=__%.filled.tex)
 ###############################################################################
 
 
+## Default target
+all: eisvogel
+
+
 ## Common options
 OPTIONS                 = --bibliography $(BIBFILE)
 
@@ -103,4 +107,4 @@ $(INCLUDES): __%.filled.tex: $(DATA)/%.tex $(SRC)
 ###############################################################################
 
 
-.PHONY: simple eisvogel docker clean distclean
+.PHONY: all simple eisvogel docker clean distclean
