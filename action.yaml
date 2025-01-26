@@ -22,16 +22,18 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: 'Setup data'
-      run: |
-        cp ${{ github.action_path }}/Makefile .
-        cp -r ${{ github.action_path }}/.pandoc .
+    - name: 'Copy Makefile'
+      run: cp ${{ github.action_path }}/Makefile .
+      shell: bash
+
+    - name: 'Copy Templates'
+      run: cp -r ${{ github.action_path }}/.pandoc .
       shell: bash
 
     - name: 'Compile document'
       run: make  ${{ inputs.template }}  SRC=${{ inputs.srcfile }}  TARGET=${{ inputs.targetfile }}  BIBFILE=${{ inputs.bibfile }}
       shell: bash
 
-    - name: 'Test'
+    - name: 'ls -lags'
       run: ls -lags
       shell: bash
