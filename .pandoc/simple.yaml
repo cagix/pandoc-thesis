@@ -2,7 +2,7 @@
 ## (see https://pandoc.org/MANUAL.html#defaults-files)
 
 ## general options
-from: markdown+lists_without_preceding_blankline
+from: markdown+lists_without_preceding_blankline+rebase_relative_paths
 to: pdf
 
 
