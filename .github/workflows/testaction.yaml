@@ -35,6 +35,14 @@ jobs:
           name: thesis_eisvogel_action
           path: thesis-eisvogel.pdf
           overwrite: true
+      - run: mkdir pdf/
+      - run: mv thesis-eisvogel.pdf pdf/
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: _eisvogel
+          publish_dir: pdf/
+          force_orphan: true
   action-simple:
     runs-on: ubuntu-latest
     steps:
@@ -50,3 +58,11 @@ jobs:
           name: thesis_simple_action
           path: thesis-simple.pdf
           overwrite: true
+      - run: mkdir pdf/
+      - run: mv thesis-simple.pdf pdf/
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: _simple
+          publish_dir: pdf/
+          force_orphan: true
