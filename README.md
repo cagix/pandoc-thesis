@@ -93,7 +93,7 @@ There are two different ways you can start with this template:
                   overwrite: true
         ```
 
-        Please adjust the files names as needed.
+        Please adjust the file names as needed.
 
     -   Work on the [`thesis.md`] and [`references.bib`] files to create your thesis and build
         the PDF by pushing to your repository (see below)
