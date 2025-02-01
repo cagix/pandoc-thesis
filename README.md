@@ -25,14 +25,14 @@ You can choose between two different styles:
 Both styles let you add an acknowledgement, an abstract (in German and/or English) and a
 restriction note.
 
-## How to Start
+## Prerequisites
 
 There are two different ways you can start with this template:
 
 1.  Working **locally** on your own machine:
 
     You will need [Docker] and the [`pandoc/extra`] docker image, as well as the contents of
-    this template repository plus [GNU Make].
+    this [template repository] plus [GNU Make].
 
     <details>
 
@@ -70,7 +70,7 @@ There are two different ways you can start with this template:
         containing copies of both the [`thesis.md`] and [`references.bib`] files provided here
 
     -   Create a GitHub workflow in your repository using the GitHub action
-        'cagix/pandoc-thesis' that is included in this template, e.g.:
+        `cagix/pandoc-thesis` that is included in this template, e.g.:
 
         ``` yaml
         on:
@@ -100,7 +100,7 @@ There are two different ways you can start with this template:
 
     </details>
 
-## Working locally
+## Working with this template
 
 1.  Maintain your references in [`references.bib`] (BibTeX format)
 
@@ -196,6 +196,7 @@ This work by [Carsten Gips] and [contributors] is licensed under [MIT].
   [Eisvogel LaTeX template]: https://github.com/Wandmalfarbe/pandoc-latex-template
   [Docker]: https://www.docker.com/
   [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
+  [template repository]: https://github.com/cagix/pandoc-thesis
   [GNU Make]: https://www.gnu.org/software/make/
   [`thesis.md`]: thesis.md
   [`references.bib`]: references.bib
