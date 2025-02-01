@@ -4,34 +4,103 @@
 
 A template for thesis documents written in Markdown.
 
-## Installation
+## About
 
-### Docker
+This template makes it easy to write your thesis in Markdown. It uses an integrated toolchain
+to translate your work into LaTeX, creating a properly formatted PDF document. So you don't
+have to worry about the somewhat arcane TeX commands and you can still enjoy the centuries-old
+art of letterpress printing, with its rules integrated into LaTeX.
 
-1.  Install docker from <https://www.docker.com/>
-2.  Fetch the [`pandoc/extra`] docker image containing all dependencies, e.g. pandoc and TeX
-    Live: `make docker` or `docker pull pandoc/extra:latest-ubuntu`
+## How to Start
 
-**Note**: You will need about 1.5GB of free disk space:
+There are two different ways you can start with this template:
 
-    $ docker image ls
-    REPOSITORY       TAG             IMAGE ID       CREATED       SIZE
-    pandoc/extra     latest-ubuntu   4be5559759ed   6 weeks ago   1.27GB
+1.  Working **locally** on your own machine:
 
-### Additional Templates
+    <details>
+    <summary>
 
-A fairly up-to-date version of the [Eisvogel template] is already included in `pandoc/extra`.
-It no longer needs to be downloaded and installed separately.
+    You will need [Docker] and the [`pandoc/extra`] docker image, as well as the contents of
+    this template repository plus [GNU Make].
 
-## Usage Example
+    </summary>
 
-1.  Maintain your references in [`references.bib`]
+    -   Fork this repository into your own namespace
 
-    Many reference management programs offer Bibtex export. One example is [JabRef], which
-    allows you to edit your Bibtex file directly.
+        Here's a tip: If you don't need the history or future update, just click the '*Use
+        this template*' button above!
 
-2.  Put the title of your thesis, your name and other meta information into the YAML header of
-    [`thesis.md`]
+    -   *Git clone* your repository locally to your machine
+
+    -   Install [Docker]
+
+    -   Fetch the [`pandoc/extra`] docker image containing all dependencies, e.g. pandoc and
+        TeX Live: `make docker` or `docker pull pandoc/extra:latest-ubuntu`
+
+        **Note**: You will need about 1.5GB of free disk space:
+
+            $ docker image ls
+            REPOSITORY       TAG             IMAGE ID       CREATED       SIZE
+            pandoc/extra     latest-ubuntu   4be5559759ed   6 weeks ago   1.27GB
+
+    -   Work on the [`thesis.md`] and [`references.bib`] files to create your thesis and build
+        the PDF using `make simple` or `make eisvogel` (see below)
+
+    </details>
+
+2.  Working **remote** using GitHub workflows:
+
+    <details>
+    <summary>
+
+    Maintain a repository with the two relevant files [`thesis.md`] and [`references.bib`],
+    and use a GitHub workflow to build the PDF.
+
+    </summary>
+
+    -   Either fork this repository into your own namespace or create your own repository
+        containing copies of both the [`thesis.md`] and [`references.bib`] files provided here
+
+    -   Create a GitHub workflow in your repository using the GitHub action
+        'cagix/pandoc-thesis' that is included in this template, e.g.:
+
+        ``` yaml
+        on:
+          pull_request:
+
+        jobs:
+          compile:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: actions/checkout@v4
+              - uses: cagix/pandoc-thesis@master
+                with:
+                  srcfile: thesis.md
+                  targetfile: thesis.pdf
+                  bibfile: references.bib
+                  template: eisvogel
+              - uses: actions/upload-artifact@v4
+                with:
+                  path: thesis.pdf
+                  overwrite: true
+        ```
+
+        Please adjust the files names as needed.
+
+    -   Work on the [`thesis.md`] and [`references.bib`] files to create your thesis and build
+        the PDF by pushing to your repository (see below)
+
+    </details>
+
+## Working locally
+
+1.  Maintain your references in [`references.bib`] (BibTeX format)
+
+    There are many reference management programs offering BibTeX export. A nice example is
+    [JabRef], which allows you to create and maintain your BibTeX file locally.
+
+2.  Put the **title** of your thesis, your **name** and other meta information into the YAML
+    header of [`thesis.md`]
 
 3.  Adjust optional definitions in the YAML header of [`thesis.md`] to your needs:
 
@@ -39,9 +108,6 @@ It no longer needs to be downloaded and installed separately.
         comment this optional definitions
     -   Modify content (text) of optional definitions like `abstract-*` or `acknowledgements`
         or `restrictionnote`
-    -   If you like Eisvogel but want a more useful`^W`conventional page header
-        (i.e. chapter/section instead of the thesis title) activate (i.e. remove the comment
-        mark in front of) `headeralternative`
 
 4.  Put your content into the markdown file [`thesis.md`]
 
@@ -63,16 +129,16 @@ It no longer needs to be downloaded and installed separately.
 
 6.  Build the thesis:
 
-    -   Using the simple layout: `make simple`
-    -   Using Eisvogel: `make eisvogel`
+    -   Locally:
+        -   Simple layout: `make simple`
+        -   Eisvogel theme: `make eisvogel`
+    -   Remote:
+        -   `git push` (and let your GitHub workflow do the heavy lifting)
 
-7.  Clean up:
+7.  Clean up (when working locally):
 
     -   To remove temporary (generated) filed: `make clean`
     -   To also remove the generated thesis (PDF): `make distclean`
-
-The above mentioned files constitute a minimal working example. To start your own project,
-simply clone this project and customize the files mentioned above.
 
 > [!WARNING]
 > When switching between templates, please make sure to `make clean` first! Failing to do so
@@ -119,10 +185,9 @@ thesis PDF.
 This work by [Carsten Gips] and [contributors] is licensed under [MIT].
 
   [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
-  [Eisvogel template]: https://github.com/Wandmalfarbe/pandoc-latex-template
+  [`thesis.md`]: thesis.md
   [`references.bib`]: references.bib
   [JabRef]: https://www.jabref.org/
-  [`thesis.md`]: thesis.md
   [pandoc.org/MANUAL.html#citations]: https://pandoc.org/MANUAL.html#citations
   [zotero.org/styles]: https://www.zotero.org/styles
   [editor.citationstyles.org/searchByName]: https://editor.citationstyles.org/searchByName/
