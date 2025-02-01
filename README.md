@@ -31,13 +31,10 @@ There are two different ways you can start with this template:
 
 1.  Working **locally** on your own machine:
 
+    You will need [Docker] and the [`pandoc/extra`] docker image, as well as the contents of
+    this template repository plus [GNU Make].
+
     <details>
-    <summary>
-
-    You will need \[Docker\] and the [`pandoc/extra`] docker image, as well as the contents of
-    this template repository plus \[GNU Make\].
-
-    </summary>
 
     -   Fork this repository into your own namespace
 
@@ -46,7 +43,7 @@ There are two different ways you can start with this template:
 
     -   *Git clone* your repository locally to your machine
 
-    -   Install \[Docker\]
+    -   Install [Docker]
 
     -   Fetch the [`pandoc/extra`] docker image containing all dependencies, e.g. pandoc and
         TeX Live: `make docker` or `docker pull pandoc/extra:latest-ubuntu`
@@ -64,13 +61,10 @@ There are two different ways you can start with this template:
 
 2.  Working **remote** using GitHub workflows:
 
-    <details>
-    <summary>
-
     Maintain a repository with the two relevant files [`thesis.md`] and [`references.bib`],
     and use a GitHub workflow to build the PDF.
 
-    </summary>
+    <details>
 
     -   Either fork this repository into your own namespace or create your own repository
         containing copies of both the [`thesis.md`] and [`references.bib`] files provided here
@@ -200,7 +194,9 @@ This work by [Carsten Gips] and [contributors] is licensed under [MIT].
 
   [scrbook LaTeX class]: https://ctan.org/pkg/scrbook
   [Eisvogel LaTeX template]: https://github.com/Wandmalfarbe/pandoc-latex-template
+  [Docker]: https://www.docker.com/
   [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
+  [GNU Make]: https://www.gnu.org/software/make/
   [`thesis.md`]: thesis.md
   [`references.bib`]: references.bib
   [JabRef]: https://www.jabref.org/
