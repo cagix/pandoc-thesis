@@ -11,6 +11,20 @@ to translate your work into LaTeX, creating a properly formatted PDF document. S
 have to worry about the somewhat arcane TeX commands and you can still enjoy the centuries-old
 art of letterpress printing, with its rules integrated into LaTeX.
 
+You can choose between two different styles:
+
+-   'simple'
+
+    The 'Simple' theme uses the [scrbook LaTeX class] and adds a custom title page.
+
+-   'Eisvogel'
+
+    The 'Eisvogel' style is based on the [Eisvogel LaTeX template] and adds a back page for
+    the cover sheet with all the information you need for a thesis.
+
+Both styles let you add an acknowledgement, an abstract (in German and/or English) and a
+restriction note.
+
 ## How to Start
 
 There are two different ways you can start with this template:
@@ -20,8 +34,8 @@ There are two different ways you can start with this template:
     <details>
     <summary>
 
-    You will need [Docker] and the [`pandoc/extra`] docker image, as well as the contents of
-    this template repository plus [GNU Make].
+    You will need \[Docker\] and the [`pandoc/extra`] docker image, as well as the contents of
+    this template repository plus \[GNU Make\].
 
     </summary>
 
@@ -32,7 +46,7 @@ There are two different ways you can start with this template:
 
     -   *Git clone* your repository locally to your machine
 
-    -   Install [Docker]
+    -   Install \[Docker\]
 
     -   Fetch the [`pandoc/extra`] docker image containing all dependencies, e.g. pandoc and
         TeX Live: `make docker` or `docker pull pandoc/extra:latest-ubuntu`
@@ -184,6 +198,8 @@ thesis PDF.
 
 This work by [Carsten Gips] and [contributors] is licensed under [MIT].
 
+  [scrbook LaTeX class]: https://ctan.org/pkg/scrbook
+  [Eisvogel LaTeX template]: https://github.com/Wandmalfarbe/pandoc-latex-template
   [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
   [`thesis.md`]: thesis.md
   [`references.bib`]: references.bib
