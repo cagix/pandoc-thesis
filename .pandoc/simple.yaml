@@ -23,6 +23,7 @@ variables:
     - twoside=false
     - open=any
     - cleardoublepage=empty
+    - headings=normal
   geometry:
     - top=30mm
     - left=25mm
