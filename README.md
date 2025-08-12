@@ -80,7 +80,7 @@ There are two different ways you can start with this template:
           compile:
             runs-on: ubuntu-latest
             steps:
-              - uses: actions/checkout@v4
+              - uses: actions/checkout@v5
               - uses: cagix/pandoc-thesis@master
                 with:
                   srcfile: thesis.md
