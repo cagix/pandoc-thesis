@@ -1,4 +1,4 @@
-<!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  README.md  -o xxx.md  -->
+<!--  pandoc -s -f markdown -t markdown+four_space_rule+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  README.md  -o xxx.md  -->
 
 # Pandoc Thesis Template
 
@@ -31,17 +31,13 @@ There are two different ways you can start with this template:
 
 1.  Working **locally** on your own machine:
 
-    You will need [Docker] and the [`pandoc/extra`] docker image, as well as the contents of
-    this [template repository] plus [GNU Make].
+    You will need [Docker] and the [`pandoc/extra`] docker image, as well a few files from
+    this [repository] plus [GNU Make].
 
     <details>
 
-    -   Fork this repository into your own namespace
-
-        Here's a tip: If you don't need the history or future update, just click the '*Use
-        this template*' button above!
-
-    -   *Git clone* your repository locally to your machine
+    -   Copy [`thesis.md`], [`references.bib`], [`Makefile`] and [`.pandoc/`] to your local
+        folder
 
     -   Install [Docker]
 
@@ -192,27 +188,29 @@ thesis PDF.
 
 This work by [Carsten Gips] and [contributors] is licensed under [MIT].
 
-  [scrbook LaTeX class]: https://ctan.org/pkg/scrbook
-  [Eisvogel LaTeX template]: https://github.com/Wandmalfarbe/pandoc-latex-template
-  [Docker]: https://www.docker.com/
-  [`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
-  [template repository]: https://github.com/cagix/pandoc-thesis
-  [GNU Make]: https://www.gnu.org/software/make/
-  [`thesis.md`]: thesis.md
-  [`references.bib`]: references.bib
-  [JabRef]: https://www.jabref.org/
-  [pandoc.org/MANUAL.html#citations]: https://pandoc.org/MANUAL.html#citations
-  [zotero.org/styles]: https://www.zotero.org/styles
-  [editor.citationstyles.org/searchByName]: https://editor.citationstyles.org/searchByName/
-  [`eisvogel.yaml`]: ./eisvogel.yaml
-  [`simple.yaml`]: ./simple.yaml
-  ["Eigenständigkeitserklärung"]: https://www.hsbi.de/media/hochschulverwaltung/dezernat-ii/studserv/pruefungsangelegenheiten/hochschulweite-ordnungen-formulare-und-antraege/eigenstaendigkeitserklaerung
-  [Simple Titlepage]: examples/thesis_example_simple_titlepage.png
-  [1]: examples/thesis_example_simple.pdf
-  [Simple Chapter]: examples/thesis_example_simple_chapter.png
-  [Eisvogel Titlepage]: examples/thesis_example_eisvogel_titlepage.png
-  [2]: examples/thesis_example_eisvogel.pdf
-  [Eisvogel Chapter]: examples/thesis_example_eisvogel_chapter.png
-  [Carsten Gips]: https://github.com/cagix
-  [contributors]: https://github.com/cagix/pandoc-thesis/graphs/contributors
-  [MIT]: https://opensource.org/licenses/MIT
+[scrbook LaTeX class]: https://ctan.org/pkg/scrbook
+[Eisvogel LaTeX template]: https://github.com/Wandmalfarbe/pandoc-latex-template
+[Docker]: https://www.docker.com/
+[`pandoc/extra`]: https://hub.docker.com/r/pandoc/extra/
+[repository]: https://github.com/cagix/pandoc-thesis
+[GNU Make]: https://www.gnu.org/software/make/
+[`thesis.md`]: thesis.md
+[`references.bib`]: references.bib
+[`Makefile`]: Makefile
+[`.pandoc/`]: .pandoc
+[JabRef]: https://www.jabref.org/
+[pandoc.org/MANUAL.html#citations]: https://pandoc.org/MANUAL.html#citations
+[zotero.org/styles]: https://www.zotero.org/styles
+[editor.citationstyles.org/searchByName]: https://editor.citationstyles.org/searchByName/
+[`eisvogel.yaml`]: ./eisvogel.yaml
+[`simple.yaml`]: ./simple.yaml
+["Eigenständigkeitserklärung"]: https://www.hsbi.de/media/hochschulverwaltung/dezernat-ii/studserv/pruefungsangelegenheiten/hochschulweite-ordnungen-formulare-und-antraege/eigenstaendigkeitserklaerung
+[Simple Titlepage]: examples/thesis_example_simple_titlepage.png
+[1]: examples/thesis_example_simple.pdf
+[Simple Chapter]: examples/thesis_example_simple_chapter.png
+[Eisvogel Titlepage]: examples/thesis_example_eisvogel_titlepage.png
+[2]: examples/thesis_example_eisvogel.pdf
+[Eisvogel Chapter]: examples/thesis_example_eisvogel_chapter.png
+[Carsten Gips]: https://github.com/cagix
+[contributors]: https://github.com/cagix/pandoc-thesis/graphs/contributors
+[MIT]: https://opensource.org/licenses/MIT
