@@ -57,7 +57,7 @@ There are two different ways you can start with this template:
 
 2.  Working **remote** using GitHub workflows:
 
-    Maintain a repository with the just two relevant files [`thesis.md`] and
+    Maintain a repository with just the two relevant files [`thesis.md`] and
     [`references.bib`], and use a GitHub workflow to build the PDF.
 
     <details>
