@@ -247,11 +247,31 @@ __titlepage_simple.filled.tex
 __frontmatter.filled.tex
 __backmatter.filled.tex
 
-.DS_Store
-
 # Temporary files
+*~
+*.swp
+*.tmp
+*.bak
+.DS_Store
+._*
 tmp/
+
+# IDE generated files #
+.vscode/
+.idea/
+*.iml
+.project
+.metadata
+.settings/
+.externalToolBuilders/
+.classpath
+
+# Temporary directory #
+tmp/
+temp/
+resources/
+docs/
+pdf/
 
 # Generated PDF artifact
 thesis.pdf
-
