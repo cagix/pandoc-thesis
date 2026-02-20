@@ -154,7 +154,6 @@ There are two different ways you can start with this template:
 > -   Install WSL (see https://learn.microsoft.com/en-us/windows/wsl/install), any
 >     distribution will work
 > -   Start the subsystem to get access to its shell
-> -   `git clone https://github.com/cagix/pandoc-thesis.git` to pull the project
 > -   `make docker` to pull the `pandoc/extra` image
 > -   `make simple` or `make eisvogel` to build the thesis
 > -   Success!
