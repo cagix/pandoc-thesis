@@ -57,13 +57,13 @@ There are two different ways you can start with this template:
 
 2.  Working **remote** using GitHub workflows:
 
-    Maintain a repository with the two relevant files [`thesis.md`] and [`references.bib`],
-    and use a GitHub workflow to build the PDF.
+    Maintain a repository with the just two relevant files [`thesis.md`] and
+    [`references.bib`], and use a GitHub workflow to build the PDF.
 
     <details>
 
-    -   Either fork this repository into your own namespace or create your own repository
-        containing copies of both the [`thesis.md`] and [`references.bib`] files provided here
+    -   Create your own repository containing copies of both the [`thesis.md`] and
+        [`references.bib`] files
 
     -   Create a GitHub workflow in your repository using the GitHub action
         `cagix/pandoc-thesis` that is included in this template, e.g.:
