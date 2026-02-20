@@ -15,7 +15,7 @@ GRPID                  ?= $(shell id -g)
 ## (Defaults to docker. To use pandoc and TeX-Live directly, create an
 ## environment variable `PANDOC` pointing to the location of your
 ## pandoc installation.)
-PANDOC                 ?= docker run --rm --volume "$(WORKDIR):/data" --workdir /data --user $(USRID):$(GRPID) pandoc/extra:latest-ubuntu
+PANDOC                 ?= docker run --rm --volume "$(WORKDIR):/data" --workdir /data --user $(USRID):$(GRPID) pandoc/extra:latest-debian
 
 
 ## Source files
@@ -68,7 +68,7 @@ eisvogel: $(TARGET)
 
 ## Build docker image ("pandoc-thesis") containing pandoc and TeX-Live
 docker:
-	docker pull pandoc/extra:latest-ubuntu
+	docker pull pandoc/extra:latest-debian
 
 
 ## Clean-up: Remove temporary (generated) files and download folder

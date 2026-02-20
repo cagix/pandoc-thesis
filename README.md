@@ -42,13 +42,13 @@ There are two different ways you can start with this template:
     -   Install [Docker]
 
     -   Fetch the [`pandoc/extra`] docker image containing all dependencies, e.g. pandoc and
-        TeX Live: `make docker` or `docker pull pandoc/extra:latest-ubuntu`
+        TeX Live: `make docker` or `docker pull pandoc/extra:latest-debian`
 
         **Note**: You will need about 1.5GB of free disk space:
 
             $ docker image ls
             REPOSITORY       TAG             IMAGE ID       CREATED       SIZE
-            pandoc/extra     latest-ubuntu   4be5559759ed   6 weeks ago   1.27GB
+            pandoc/extra     latest-debian   7e37eb62e7ca   15 days ago   1.31GB
 
     -   Work on the [`thesis.md`] and [`references.bib`] files to create your thesis and build
         the PDF using `make simple` or `make eisvogel` (see below)
