@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: cagix/pandoc-thesis@master
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: thesis_defaults_action
           path: thesis.pdf
@@ -33,7 +33,7 @@ jobs:
           targetfile: thesis-eisvogel.pdf
           bibfile: references.bib
           template: eisvogel
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: thesis_eisvogel_action
           path: thesis-eisvogel.pdf
@@ -56,7 +56,7 @@ jobs:
           targetfile: thesis-simple.pdf
           bibfile: references.bib
           template: simple
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: thesis_simple_action
           path: thesis-simple.pdf
