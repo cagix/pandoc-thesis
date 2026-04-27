@@ -9,6 +9,9 @@ on:
   # triggered by pull requests
   pull_request:
 
+permissions:
+  contents: write  # needed to push on branches
+
 jobs:
   action-defaults:
     runs-on: ubuntu-latest
