@@ -9,7 +9,7 @@ date: "20. Juli 2025"
 reviewer1:  "XXX, HSBI"
 reviewer2:  "XXX, Wuppie GmbH"
 
-keywords: [Markdown, Example]
+#keywords: [Markdown, Example]
 lang: de-DE
 
 
