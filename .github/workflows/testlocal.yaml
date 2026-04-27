@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: make eisvogel
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: thesis_eisvogel_local
           path: thesis.pdf
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: make simple
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: thesis_simple_local
           path: thesis.pdf
