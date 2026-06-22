@@ -13,7 +13,7 @@ jobs:
   local-eisvogel:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: make eisvogel
       - uses: actions/upload-artifact@v7
         with:
@@ -23,7 +23,7 @@ jobs:
   local-simple:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: make simple
       - uses: actions/upload-artifact@v7
         with:

@@ -16,7 +16,7 @@ jobs:
   action-defaults:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: cagix/pandoc-thesis@master
       - uses: actions/upload-artifact@v7
         with:
@@ -26,7 +26,7 @@ jobs:
   action-eisvogel:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: cagix/pandoc-thesis@master
         with:
           srcfile: thesis.md
@@ -49,7 +49,7 @@ jobs:
   action-simple:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: cagix/pandoc-thesis@master
         with:
           srcfile: thesis.md
